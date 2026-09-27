@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
-import Sidebar from "./components/SideBar/Sidebar";
-import SessionBar from "./components/SessionBar/SessionBar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Sessionbar from "./components/Sessionbar/Sessionbar";
 import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home/Home";
@@ -36,7 +36,7 @@ const App = () => {
               <Route path="/recent-literature" element={<RecentLiterature/>}/>
             </Routes>
           </div> 
-          <SessionBar/>
+          <Sessionbar/>
         </div>
         <Footer/>
       </div>

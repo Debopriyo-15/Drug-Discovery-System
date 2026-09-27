@@ -1,9 +1,9 @@
-import React from 'react'
+import "./Sessionbar.css"
 
-const SessionBar = () => {
+const Sessionbar = () => {
   return (
-    <div>SessionBar</div>
+    <div>Sessionbar</div>
   )
 }
 
-export default SessionBar
+export default Sessionbar

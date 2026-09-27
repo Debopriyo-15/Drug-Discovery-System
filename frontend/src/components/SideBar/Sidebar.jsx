@@ -20,7 +20,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="title-container">
         <div className="title">
-          <h2>Drug <FlaskConical/></h2>
+          <h2>Drug <FlaskConical className="flask"/></h2>
           <h2>Discovery AI</h2>
           <h3>AI RAG Research Station</h3>
         </div>

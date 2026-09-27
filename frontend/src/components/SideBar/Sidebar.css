@@ -27,11 +27,18 @@
     margin-left: 25px;
 }
 
+.sidebar .title-container .title .flask {
+    background-color: #2E5BFF;
+    border-radius: 4px;
+    color: white;
+    padding: 3px;
+}
+
 .sidebar .title-container .title h2 {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
 }
 
 .sidebar .title-container .title h3 {
