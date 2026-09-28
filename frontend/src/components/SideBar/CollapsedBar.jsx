@@ -41,6 +41,32 @@ const CollapsedBar = ({ panelAction }) => {
           )}
         </div>
       </div>
+
+      <div className="navigations-container">
+        <div className="navigations">
+          <ul>
+            <li><LayoutDashboard className="icons"/></li>
+            <li><BotMessageSquare className="icons"/></li>
+          </ul>
+
+          <ul>
+            <li><BookOpenText className="icons"/></li>
+            <li><ListClock className="icons"/></li>
+          </ul>
+
+          <ul>
+            <li><Microscope className="icons"/></li>
+            <li><ListClock className="icons"/></li>
+
+            <li><ChartNoAxesCombined className="icons"/></li>
+            <li><ListClock className="icons"/></li>
+          </ul>
+
+          <ul>
+            <li><ClipboardList className="icons"/> </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
