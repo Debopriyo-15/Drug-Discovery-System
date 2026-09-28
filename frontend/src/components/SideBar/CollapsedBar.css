@@ -47,7 +47,44 @@
 }
 
 
+.collapsed .navigations-container .navigations {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0.5rem;
+}
+
+
+.collapsed .navigations-container .navigations ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.collapsed .navigations-container .navigations ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px;
+
+    font-weight: 500;
+    color: rgb(64, 64, 64);
+    cursor: pointer;
+}
+
+.collapsed .navigations-container .navigations ul li .icons {
+    border-radius: 4px; 
+    padding: 6px;
+    height: 2em;
+    width: 2em;
+}
+
 .collapsed .title-container .panel-open:hover {
     color: #2E5BFF;
 }
 
+.collapsed .navigations-container .navigations ul li .icons:hover {
+   background-color: rgb(223, 223, 223);
+    color: rgb(64, 64, 64);
+}
