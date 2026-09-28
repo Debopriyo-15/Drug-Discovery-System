@@ -1,0 +1,63 @@
+.sessionbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+    border-left: 1px solid rgb(194, 194, 194);
+    border-bottom: 1px solid rgb(194, 194, 194);
+    gap: 1rem;
+    width: 250px;
+    padding-bottom: 15px;
+}
+.sessionbar .sessionbar-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    padding-left: 20px;
+    border-bottom: 1px solid rgb(194, 194, 194);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #2E5BFF;
+}
+.sessionbar .sessionbar-title h3 {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 0.3rem;
+    color: rgba(71, 71, 71, 0.603);
+}
+.sessionbar .sessionbar-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.sessionbar .sessionbar-content .sessionbar-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 15px;
+    height: 40px;
+    width: 220px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    color: rgba(71, 71, 71, 0.603);
+    padding: 10px;
+
+}
+.sessionbar .sessionbar-content .sessionbar-item:hover{
+    background-color: rgba(71, 71, 71, 0.095);
+    color: #2E5BFF;
+    cursor: pointer;
+    border-left: 2px solid #2E5BFF;
+    border-radius: 4px;
+}
+.sessionbar .sessionbar-content .sessionbar-item{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.6rem;
+}
+
