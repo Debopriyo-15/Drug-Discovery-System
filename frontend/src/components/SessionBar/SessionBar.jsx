@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { 
   Atom, 
   Virus, 
@@ -5,20 +7,31 @@ import {
   ScrollText,
   PanelLeftClose,
   PanelLeftOpen,
+  MonitorDot
 } from "lucide-react";
+
+import CollapsedSessionbar from "./CollapsedSessionbar";
 
 import "./Sessionbar.css";
 
 const Sessionbar = () => {
+ const [closeSessionPanel, setCloseSessionPanel] = useState(false);
+
+  const sessionPanelAction = () => {
+    setCloseSessionPanel(!closeSessionPanel);
+  };
+
   return (
+    !closeSessionPanel ? (
     <div className="sessionbar">
       <div className="title-container">
         <div className="title">
-          <h2>Research Session</h2>
+          <h2>Current<MonitorDot className="monitor"/></h2>
+          <h2 style={{fontSize: "22px"}}>Research Session</h2>
           <h3>Contextual Evidence</h3>
         </div>
         <div className="panel-close">
-          <PanelLeftOpen size={24}  />
+          <PanelLeftOpen size={24} onClick={sessionPanelAction}/>
         </div>
       </div>
 
@@ -33,6 +46,11 @@ const Sessionbar = () => {
         </div>
       </div>
     </div>
+    ) : (
+      <CollapsedSessionbar 
+        sessionPanelAction={sessionPanelAction}
+      />
+    )
   );
 };
 
