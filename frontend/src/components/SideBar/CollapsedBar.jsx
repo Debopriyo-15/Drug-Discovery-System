@@ -1,0 +1,48 @@
+import {
+  FlaskConical,
+  LayoutDashboard,
+  BotMessageSquare,
+  BookOpenText,
+  Microscope,
+  ChartNoAxesCombined,
+  ClipboardList,
+  ListClock,
+  PanelLeftClose,
+  PanelLeftOpen,
+  ListChevronsUpDown,
+  ListChevronsDownUp,
+} from "lucide-react";
+
+import "./CollapsedBar.css";
+import { useState } from "react";
+
+const CollapsedBar = ({ panelAction }) => {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <div className="collapsed">
+      <div className="title-container">
+        <div className="title">
+          {!hover ? (
+            <FlaskConical
+              className="flask"
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+            />
+          ) : (
+            <div className="panel-open">
+              <PanelLeftOpen
+                size={23}
+                onClick={panelAction}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CollapsedBar;

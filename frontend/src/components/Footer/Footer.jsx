@@ -36,7 +36,7 @@ const Footer = () => {
 
         <div className="sources-container">
           <div className="sources">
-            <h4>CHEMICAL & MOLECULAR DATA</h4>
+            <h4>CHEMICAL INDICES</h4>
             <a
               href="https://www.ebi.ac.uk/chembl/"
               target="_blank"
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
 
           <div className="sources">
-            <h4>LITERATURE & EVIDENCE</h4>
+            <h4>EVIDENCE & CLINICAL</h4>
             <a
               href="https://europepmc.org/"
               target="_blank"
