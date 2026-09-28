@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Sessionbar from "./components/SessionBar/SessionBar";
+import Sessionbar from "./components/Sessionbar/Sessionbar";
 import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home/Home";

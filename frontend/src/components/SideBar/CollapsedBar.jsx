@@ -32,7 +32,7 @@ const CollapsedBar = ({ panelAction }) => {
           ) : (
             <div className="panel-open">
               <PanelLeftOpen
-                size={23}
+                size={24}
                 onClick={panelAction}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}

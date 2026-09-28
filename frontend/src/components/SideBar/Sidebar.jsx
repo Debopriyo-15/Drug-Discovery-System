@@ -31,14 +31,12 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="title-container">
         <div className="title">
-          <h2>
-            Drug <FlaskConical className="flask" />
-          </h2>
+          <h2>Drug <FlaskConical className="flask" /></h2>
           <h2>Discovery AI</h2>
           <h3>AI RAG Research Station</h3>
         </div>
         <div className="panel-close">
-          <PanelLeftClose size={23} onClick={panelAction} />
+          <PanelLeftClose size={24} onClick={panelAction} />
         </div>
       </div>
 
@@ -85,7 +83,7 @@ const Sidebar = () => {
             </li>
             <li className="recents">
               <ListClock />
-              <p>Recent Compound Analysis</p>
+              <p>Recent Analysis</p>
             </li>
 
             <li>
@@ -94,7 +92,7 @@ const Sidebar = () => {
             </li>
             <li className="recents">
               <ListClock />
-              <p>Recent Similarity Analysis</p>
+              <p>Recent Analysis</p>
             </li>
           </ul>
 

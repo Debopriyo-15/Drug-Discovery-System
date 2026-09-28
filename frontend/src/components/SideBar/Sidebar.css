@@ -57,7 +57,9 @@
     height: fit-content;
     color: rgba(71, 71, 71, 0.495);
     cursor: pointer;
+    transform: translateY(3px);
     border-radius: 4px;
+   transition: color 0.1s ease, background-color 0.1s ease;
 }
 
 .sidebar .navigations-container {
@@ -88,8 +90,9 @@
     align-items: center;
     gap: 0.5rem;
 
-    color: rgb(86, 86, 86);
+    color: rgba(86, 86, 86, 0.916);
     font-weight: 600;
+    
 }
 
 .sidebar .navigations-container .navigations ul span h4 {
@@ -103,6 +106,7 @@
     cursor: pointer;
     border-radius: 4px;
     padding: 3px;
+    transition: color 0.1s ease, background-color 0.1s ease;
 }
 
 .sidebar .navigations-container .navigations ul li {
@@ -115,15 +119,16 @@
     border-radius: 4px;
 
     font-weight: 500;
-    color: rgb(64, 64, 64);
+    color: rgba(64, 64, 64, 0.868);
     cursor: pointer;
+    transition: color 0.1s ease, background-color 0.1s ease;
 }
 
 .sidebar .navigations-container .navigations ul .recents {
-    transform: translateX(15px);
+    transform: translateX(25px);
     color: rgb(74, 74, 74);
     font-weight: 400;
-    width: 205px;
+    width: 195px;
 }
 
 .sidebar .navigations-container .navigations ul li p{
@@ -136,7 +141,7 @@
 }
 
 .sidebar .navigations-container .navigations ul li:hover{
-    background-color: rgb(223, 223, 223);
+    background-color: rgba(71, 71, 71, 0.095);
     border-left: 2px solid #2E5BFF;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -145,5 +150,5 @@
 }
 
 .sidebar .navigations-container .navigations ul span .icon:hover {
-    background-color: rgb(223, 223, 223);
+    background-color: rgba(71, 71, 71, 0.095);
 }

@@ -9,55 +9,104 @@
     width: 250px;
     padding-bottom: 15px;
 }
-.sessionbar .sessionbar-title {
+
+.sessionbar .title-container {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    
-    padding-left: 20px;
+
     border-bottom: 1px solid rgb(194, 194, 194);
     padding-top: 20px;
     padding-bottom: 20px;
     color: #2E5BFF;
 }
-.sessionbar .sessionbar-title h3 {
+
+.sessionbar .title-container .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 18px;
+}
+
+.sessionbar .title-container .title h3 {
     font-size: 15px;
     font-weight: 500;
     padding-top: 0.3rem;
     color: rgba(71, 71, 71, 0.603);
 }
-.sessionbar .sessionbar-content{
+
+.sessionbar .title-container .panel-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+    height: fit-content;
+    color: rgba(71, 71, 71, 0.495);
+    transform: translateY(3px);
+    cursor: pointer;
+    transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.sessionbar .navigations-container {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 1rem;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-.sessionbar .sessionbar-content .sessionbar-item{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0px 15px;
-    height: 40px;
-    width: 220px;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-    color: rgba(71, 71, 71, 0.603);
-    padding: 10px;
+}
 
+.sessionbar .navigations-container .navigations {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 220px;
 }
-.sessionbar .sessionbar-content .sessionbar-item:hover{
-    background-color: rgba(71, 71, 71, 0.095);
-    color: #2E5BFF;
-    cursor: pointer;
-    border-left: 2px solid #2E5BFF;
-    border-radius: 4px;
+
+.sessionbar .navigations-container .navigations ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
 }
-.sessionbar .sessionbar-content .sessionbar-item{
+
+.sessionbar .navigations-container .navigations ul li {
     display: flex;
     justify-content: start;
     align-items: center;
+
+    padding: 10px;
     gap: 0.6rem;
+    border-radius: 4px;
+
+    font-weight: 500;
+    color: rgba(64, 64, 64, 0.868);
+    cursor: pointer;
+    transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.sessionbar .navigations-container .navigations ul li p {
+    width: 90%;
+    font-size: 15px;
+}
+
+.sessionbar .navigations-container .navigations ul li .qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    width: 15%;
+    font-size: 13px;
+    border-radius: 4px;
+    background-color: rgba(71, 71, 71, 0.095);
+}
+
+.sessionbar .navigations-container .navigations ul li:hover {
+    background-color: rgba(71, 71, 71, 0.095);
+    color: #2E5BFF;
+    border-left: 2px solid #2E5BFF;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.sessionbar .title-container .panel-close:hover {
+    color: #2E5BFF;
 }
 
