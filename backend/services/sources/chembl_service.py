@@ -1,7 +1,7 @@
 import requests
 
 from config.config import settings
-from utils.api_client import request_json
+from utils.api_client import request_json, request_content
 
 
 class ChEMBLService:
@@ -19,8 +19,44 @@ class ChEMBLService:
      
     def _get(self, url: str, params=None):
         try:
-
             return request_json(
+                "GET",
+                url,
+                service_name="ChEMBL API",
+                params=params,
+                timeout=self.timeout,
+                retry_attempts=self.retry_attempts,
+                backoff_factor=self.backoff_factor,
+            )
+
+        except requests.exceptions.Timeout:
+            raise Exception(
+                "ChEMBL API request timed out!"
+            )
+
+        except requests.exceptions.ConnectionError:
+            raise Exception(
+                "Unable to connect to ChEMBL API!"
+            )
+
+        except requests.exceptions.HTTPError as e:
+            raise Exception(
+                f"ChEMBL API returned an error: {e}"
+            )
+
+        except requests.exceptions.JSONDecodeError:
+            raise Exception(
+                "ChEMBL returned invalid JSON response!"
+            )
+
+        except requests.exceptions.RequestException as e:
+            raise Exception(
+                f"Unexpected ChEMBL API error: {e}"
+            )
+    
+    def _get_image(self, url: str, params=None):
+        try:
+            return request_content(
                 "GET",
                 url,
                 service_name="ChEMBL API",
@@ -78,6 +114,14 @@ class ChEMBLService:
         url = f"{self.base_url}/molecule/{chembl_id}.json"
         
         return self._get(url)
+    
+    
+    # Get compound image
+    
+    def get_molecule_image(self, chembl_id: str):
+        url = f"{self.base_url}/image/{chembl_id}.svg"
+                
+        return self._get_image(url)
     
     
     # Get all activity records associated with a molecule.
@@ -152,8 +196,4 @@ class ChEMBLService:
         )
     
     
-    
-    # Get 
-      
-      
 chembl_service = ChEMBLService()

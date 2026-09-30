@@ -61,6 +61,8 @@ class TextChunker:
                 journal=paper.journal,
                 publication_year=paper.publication_year,
                 authors=paper.authors,
+                keywords=paper.keywords,
+                mesh_terms=paper.mesh_terms,
 
                 chunk_index=chunk_index,
                 text=chunk_text

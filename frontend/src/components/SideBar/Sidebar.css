@@ -1,154 +1,171 @@
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 
-    border-right: 1px solid rgb(194, 194, 194);
-    border-bottom: 1px solid rgb(194, 194, 194);
-    gap: 1rem;
-    width: 250px;
-    padding-bottom: 15px;
+  border-right: 1px solid rgb(194, 194, 194);
+  border-bottom: 1px solid rgb(194, 194, 194);
+  gap: 1rem;
+  width: 250px;
+  height: 100vh;
+  padding-bottom: 15px;
 }
 
 .sidebar .title-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    border-bottom: 1px solid rgb(194, 194, 194);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #2E5BFF;
+  border-bottom: 1px solid rgb(194, 194, 194);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #2e5bff;
 }
 
 .sidebar .title-container .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 180px;
-    margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 180px;
+  margin-left: 18px;
 }
 
 .sidebar .title-container .title .flask {
-    background-color: #2E5BFF;
-    border-radius: 4px;
-    color: white;
-    padding: 4px;
+  background-color: #2e5bff;
+  border-radius: 4px;
+  color: white;
+  padding: 4px;
 }
 
 .sidebar .title-container .title h2 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 0.6rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .sidebar .title-container .title h3 {
-    font-size: 15px;
-    font-weight: 500;
-    padding-top: 0.3rem;
-    color: rgba(71, 71, 71, 0.603);
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 0.3rem;
+  color: rgba(71, 71, 71, 0.603);
 }
 
 .sidebar .title-container .panel-close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    height: fit-content;
-    color: rgba(71, 71, 71, 0.495);
-    cursor: pointer;
-    transform: translateY(3px);
-    border-radius: 4px;
-   transition: color 0.1s ease, background-color 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  height: fit-content;
+  color: rgba(71, 71, 71, 0.495);
+  cursor: pointer;
+  transform: translateY(3px);
+  border-radius: 4px;
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 .sidebar .navigations-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 
-.sidebar .navigations-container .navigations{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    gap: 1rem;
-    width: 220px;
+.sidebar .navigations-container .navigations {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1rem;
+  width: 220px;
+
+  height: 100%;
+  overflow-y: auto;
 }
 
 .sidebar .navigations-container .navigations ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
 }
 
 .sidebar .navigations-container .navigations ul span {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
 
-    color: rgba(86, 86, 86, 0.916);
-    font-weight: 600;
-    
+  color: rgba(86, 86, 86, 0.916);
+  font-weight: 600;
 }
 
 .sidebar .navigations-container .navigations ul span h4 {
-    font-size: 15px;
-    width: 100%;
+  font-size: 15px;
+  width: 100%;
 }
 
 .sidebar .navigations-container .navigations ul span .icon {
-    height: 1.7em;
-    width: 1.7em;
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 3px;
-    transition: color 0.1s ease, background-color 0.1s ease;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 3px;
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 .sidebar .navigations-container .navigations ul li {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
-    padding: 10px;
-    gap: 0.5rem;
-    border-radius: 4px;
+  padding: 10px;
+  gap: 0.5rem;
+  border-radius: 4px;
 
-    font-weight: 400;
-    color: rgba(64, 64, 64, 0.868);
-    cursor: pointer;
-    transition: color 0.1s ease, background-color 0.1s ease;
+  font-weight: 400;
+  color: rgba(64, 64, 64, 0.868);
+  cursor: pointer;
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 .sidebar .navigations-container .navigations ul .recents {
-    transform: translateX(25px);
-    color: rgb(74, 74, 74);
-    font-weight: 400;
-    width: 195px;
+  transform: translateX(25px);
+  color: rgb(74, 74, 74);
+  font-weight: 400;
+  width: 195px;
 }
 
-.sidebar .navigations-container .navigations ul li p{
-    width: 100%;
-    font-size: 15px;
+.sidebar .navigations-container .navigations ul li p {
+  width: 100%;
+  font-size: 15px;
 }
 
 .sidebar .title-container .panel-close:hover {
-    color: #2E5BFF;
+  color: #2e5bff;
 }
 
-.sidebar .navigations-container .navigations ul li:hover{
-    background-color: rgba(71, 71, 71, 0.095);
-    border-left: 2px solid #2E5BFF;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    color: #2E5BFF;
-    font-weight: 600;
+.sidebar .navigations-container .navigations ul li:hover {
+  background-color: rgba(71, 71, 71, 0.095);
+  border-left: 2px solid #2e5bff;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  color: #2e5bff;
+  font-weight: 600;
 }
 
 .sidebar .navigations-container .navigations ul span .icon:hover {
-    background-color: rgba(71, 71, 71, 0.095);
+  background-color: rgba(71, 71, 71, 0.095);
+}
+
+.sidebar .navigations-container::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+
+.sidebar .navigations-container::-webkit-scrollbar-thumb {
+  background: #bcbec7;
+  border-radius: 3px;
 }

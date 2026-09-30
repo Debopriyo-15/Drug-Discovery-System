@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException, Response
 
 from api.request_models import (
     AnalysisRequest,
@@ -14,12 +14,14 @@ from models.conversation_state import ConversationState
 from pipeline.run_pipeline import execute
 from pipeline.run_free_conversation import run_user_input
 
+from services.sources.chembl_service import chembl_service
+
 router = APIRouter()
 
 
 @router.get("/health", response_model= HealthCheckResponse)
 def health_check():
-    return  HealthCheckResponse(
+    return HealthCheckResponse(
         status="healthy",
         service="Drug Discovery RAG"
     )
@@ -45,6 +47,25 @@ def analyze(request: AnalysisRequest):
         mode=request.mode,
         result=result
     )
+
+
+@router.get("/image/{chembl_id}")
+def get_compound_image(chembl_id: str):
+    try:
+        image_content = chembl_service.get_molecule_image(
+            chembl_id
+        )
+        
+        return Response(
+            content=image_content,
+            media_type="image/svg+xml"
+        )
+        
+    except Exception as error:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Unable to retrieve compound image: {error}"
+        ) from error
 
 
 @router.post("/c/{conversation_id}", response_model=ConversationResponse)

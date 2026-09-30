@@ -7,7 +7,6 @@ import {
   ChartNoAxesCombined,
   ClipboardList,
   ListClock,
-  PanelLeftClose,
   PanelLeftOpen,
   ListChevronsUpDown,
   ListChevronsDownUp,

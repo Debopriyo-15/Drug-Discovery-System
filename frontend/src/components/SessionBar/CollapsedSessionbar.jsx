@@ -6,7 +6,7 @@ import {
   Dna,
   ScrollText,
   MonitorDot,
-  PanelLeftOpen
+  PanelLeftClose,
 } from "lucide-react";
 
 import "./CollapsedSessionbar.css";
@@ -26,7 +26,7 @@ const CollapsedSessionbar = ({ sessionPanelAction }) => {
             />
           ) : (
             <div className="panel-open">
-              <PanelLeftOpen
+              <PanelLeftClose
                 size={24}
                 onClick={sessionPanelAction}
                 onMouseEnter={() => setHover(true)}

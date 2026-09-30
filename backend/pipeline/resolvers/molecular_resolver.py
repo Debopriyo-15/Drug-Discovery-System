@@ -216,7 +216,7 @@ class MolecularResolver:
     ):
         return {
             "compound": compound.model_dump(),
-            "properties": properties.model_dump(),
+            "properties": properties.model_dump(exclude={"lipinski"}),
             "drug_likeness": self._build_drug_likeness(properties),
             "proteins": proteins,
             "side_effects": side_effects,
@@ -257,7 +257,7 @@ class MolecularResolver:
                     "pass": lipinski.overall_pass,
                     "violations": lipinski.violations,
                     "classification": "Drug-like" if lipinski.overall_pass else "Poor drug-likeness",
-                    "explanation": "The compound satisfies the Lipinski Rule of Five." if lipinski.overall_pass else "The compound violates one or more Lipinski criteria."
+                    "explanation": "Compound exhibits optimal physiochemical properties for oral bioavailibilty." if lipinski.overall_pass else "The compound violates one or more Lipinski criteria making it unsuitable for oral intake."
                 }
             }
         }

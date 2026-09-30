@@ -29,7 +29,7 @@ class EuropePMCService:
             "query": query,
             "format": "json",
             "resultType": "core",
-            "pageSize": page_size
+            "pageSize": page_size 
         }
         
         try:

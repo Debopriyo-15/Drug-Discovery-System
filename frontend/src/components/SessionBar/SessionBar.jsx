@@ -1,56 +1,157 @@
 import { useState } from "react";
 
-import { 
-  Atom, 
-  Virus, 
-  Dna, 
+import {
+  Atom,
+  Germ,
+  Dna,
+  TriangleAlert,
   ScrollText,
-  PanelLeftClose,
   PanelLeftOpen,
-  MonitorDot
+  MonitorDot,
+  ListChevronsUpDown,
+  ListChevronsDownUp,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 import CollapsedSessionbar from "./CollapsedSessionbar";
 
 import "./Sessionbar.css";
 
+import data from "../../assets/data";
+
 const Sessionbar = () => {
- const [closeSessionPanel, setCloseSessionPanel] = useState(false);
+  const [closeSessionPanel, setCloseSessionPanel] = useState(false);
+  const [expandedCompounds, setExpandedCompounds] = useState(new Set()) ;
+
+  const toggleCompound = (id) => {
+    setExpandedCompounds((prev) => {
+      const updated = new Set(prev);
+
+      if(updated.has(id))
+        updated.delete(id);
+      else
+        updated.add(id);
+
+      return updated;
+    })
+  }
+
+  const getIdType = (id) => {
+    if (/^\d+$/.test(id)) return "PMID";
+    if (/^PMC\d+$/.test(id)) return "PMCID";
+    if (/^10\.\d{4,9}\/\S+$/.test(id)) return "DOI";
+
+    return "Unknown";
+  };
 
   const sessionPanelAction = () => {
     setCloseSessionPanel(!closeSessionPanel);
   };
 
-  return (
-    !closeSessionPanel ? (
+  return !closeSessionPanel ? (
     <div className="sessionbar">
       <div className="title-container">
         <div className="title">
-          <h2>Current<MonitorDot className="monitor"/></h2>
-          <h2 style={{fontSize: "22px"}}>Research Session</h2>
+          <h2>
+            Current
+            <MonitorDot className="monitor" />
+          </h2>
+          <h2 style={{ fontSize: "22px" }}>Research Session</h2>
           <h3>Contextual Evidence</h3>
         </div>
         <div className="panel-close">
-          <PanelLeftOpen size={24} onClick={sessionPanelAction}/>
+          <PanelLeftOpen size={24} onClick={sessionPanelAction} />
         </div>
       </div>
 
       <div className="navigations-container">
         <div className="navigations">
           <ul>
-            <li><Atom /><p>Active Compounds</p><p className="qty">12</p></li>
-            <li><Virus /><p>Diseases</p><p className="qty">5</p></li>
-            <li><Dna /><p>Proteins</p><p className="qty">7</p></li>
-            <li><ScrollText /><p>Reference Paper</p><p className="qty">10</p></li>
+            <span>
+              <Atom size={16} />
+              <h4>Active Compounds</h4>
+              <p className="qty">
+                {data.state.analyzed_compounds.length}
+              </p>
+              <ListChevronsUpDown className="icon" size={22} />
+            </span>
+            {data.state.analyzed_compounds.map((compound) => {
+              const compoundData = compound.compound_details.compound;
+              const isExpanded = expandedCompounds.has(compoundData.chembl_id);
+
+              return (
+                <li
+                  key={compoundData.chembl_id}
+                  onClick={() => toggleCompound(compoundData.chembl_id)}
+                >
+                  <div className="compound">
+                    <p>{compoundData.canonical_name}</p>
+                    {isExpanded ? (
+                      <ChevronUp size={20}/>
+                    ):(
+                      <ChevronDown size={20}/>
+                    )}
+                  </div>
+
+                  {isExpanded && (
+                    <div className="summary">
+                      <span>
+                        <Dna size={16} />
+                        <h5>Target Proteins</h5>
+                        <p className="qty">{compound.summary.protein_count}</p>
+                      </span>
+                      <span>
+                        <TriangleAlert size={16} />
+                        <h5>Potential Side Effects</h5>
+                        <p className="qty">
+                          {compound.summary.side_effect_count}
+                        </p>
+                      </span>
+                      <span>
+                        <Germ size={16} />
+                        <h5>Treatable Diseases</h5>
+                        <p className="qty">
+                          {compound.summary.treatable_disease_count}
+                        </p>
+                      </span>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+
+          <ul>
+            <span>
+              <ScrollText size={16} />
+              <h4>Referenced Papers</h4>
+              <p className="qty">
+                {data.state.referenced_paper_ids.length}
+              </p>
+              <ListChevronsUpDown className="icon" size={22} />
+            </span>
+            {data.state.referenced_paper_ids.map((paper_id) => {
+
+
+              return (
+                <li key={paper_id}>
+                  <div className="compound">
+                    <div className="id">
+                      <h5>{getIdType(paper_id)}:</h5>
+                      <p>{paper_id}</p>
+                    </div>
+                    <ChevronUp size={20} />
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
     </div>
-    ) : (
-      <CollapsedSessionbar 
-        sessionPanelAction={sessionPanelAction}
-      />
-    )
+  ) : (
+    <CollapsedSessionbar sessionPanelAction={sessionPanelAction} />
   );
 };
 

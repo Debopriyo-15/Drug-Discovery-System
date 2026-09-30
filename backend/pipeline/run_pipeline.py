@@ -514,7 +514,7 @@ if __name__ == "__main__":
                 print(f"Year    : {source.publication_year}")
                 print(f"URL     : {source.url}")
                 print(f"Score   : {source.similarity_score}")
-
+                
 
         if result.papers:
             print("\nIndexed Papers:")
@@ -529,6 +529,8 @@ if __name__ == "__main__":
                 print(f"Journal : {paper.journal}")
                 print(f"Year    : {paper.publication_year}")
                 print(f"URL     : {paper.url}")
+                print(f"Keyword : {paper.keywords}")
+                print(f"Mesh    : {paper.mesh_terms}")
 
                 # if paper.abstract:
                 #     print("\nAbstract:")

@@ -10,7 +10,6 @@ import {
   ClipboardList,
   ListClock,
   PanelLeftClose,
-  PanelLeftOpen,
   ListChevronsUpDown,
   ListChevronsDownUp,
   ExternalLink

@@ -1,128 +1,225 @@
 .sessionbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    
-    border-left: 1px solid rgb(194, 194, 194);
-    border-bottom: 1px solid rgb(194, 194, 194);
-    gap: 1rem;
-    width: 250px;
-    padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  border-left: 1px solid rgb(194, 194, 194);
+  border-bottom: 1px solid rgb(194, 194, 194);
+  gap: 1rem;
+  width: 250px;
+  height: 100vh;
+  padding-bottom: 15px;
 }
 
 .sessionbar .title-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    border-bottom: 1px solid rgb(194, 194, 194);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #2E5BFF;
+  border-bottom: 1px solid rgb(194, 194, 194);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #2e5bff;
 }
 
 .sessionbar .title-container .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 190px;
-    margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 180px;
+  margin-left: 18px;
 }
 
 .sessionbar .title-container .title h2 {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 0.6rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .sessionbar .title-container .title .monitor {
-    background-color: #2E5BFF;
-    border-radius: 4px;
-    color: white;
-    padding: 4px;
+  background-color: #2e5bff;
+  border-radius: 4px;
+  color: white;
+  padding: 4px;
 }
 
 .sessionbar .title-container .title h3 {
-    font-size: 15px;
-    font-weight: 500;
-    padding-top: 0.3rem;
-    color: rgba(71, 71, 71, 0.603);
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 0.3rem;
+  color: rgba(71, 71, 71, 0.603);
 }
 
-
 .sessionbar .title-container .panel-close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 12px;
-    height: fit-content;
-    color: rgba(71, 71, 71, 0.495);
-    transform: translateY(3px);
-    cursor: pointer;
-    transition: color 0.1s ease, background-color 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  height: fit-content;
+  color: rgba(71, 71, 71, 0.495);
+  transform: translateY(3px);
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 .sessionbar .navigations-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .sessionbar .navigations-container .navigations {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1rem;
+  width: 220px;
 }
 
 .sessionbar .navigations-container .navigations ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.sessionbar .navigations-container .navigations ul span {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 6px;
+
+  color: rgba(86, 86, 86, 0.916);
+  font-weight: 600;
+}
+
+.sessionbar .navigations-container .navigations ul span h4 {
+  flex: 1;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.sessionbar .navigations-container .navigations ul span .icon {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 3px;
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease;
 }
 
 .sessionbar .navigations-container .navigations ul li {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+
+  padding: 10px;
+  gap: 0.5rem;
+  border-radius: 4px;
+
+  font-weight: 400;
+  color: rgba(64, 64, 64, 0.868);
+  cursor: pointer;
+  transition:
+    color 0.1s ease,
+    background-color 0.1s ease;
+}
+
+.sessionbar .navigations-container .navigations ul li .summary {
     display: flex;
     justify-content: start;
-    align-items: center;
+    flex-direction: column;
+}
 
-    padding: 10px;
-    gap: 0.6rem;
-    border-radius: 4px;
-
+.sessionbar .navigations-container .navigations ul li .summary h5 {
+    width: 100%;
     font-weight: 400;
-    color: rgba(64, 64, 64, 0.868);
-    cursor: pointer;
-    transition: color 0.1s ease, background-color 0.1s ease;
 }
 
-.sessionbar .navigations-container .navigations ul li p {
-    width: 90%;
-    font-size: 15px;
+.sessionbar .navigations-container .navigations ul li .compound {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
 }
 
-.sessionbar .navigations-container .navigations ul li .qty {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    width: 15%;
-    font-size: 13px;
-    border-radius: 4px;
-    background-color: rgba(71, 71, 71, 0.095);
+.sessionbar .navigations-container .navigations ul li .compound p {
+  gap: 0.5rem;
+  font-size: 13px;
+  font-weight: 450;
+  width: 100%;
+  
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+.sessionbar .navigations-container .navigations ul li .compound .id {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.2rem;
+  width: 80%;
+}
+
+.sessionbar .navigations-container .navigations ul li .compound .id p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+.sessionbar .navigations-container .navigations ul li .compound .id h5 {
+  font-weight: 550;
+}
+
+.sessionbar .navigations-container .navigations ul span .qty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  min-width: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #2e5bff;
+  background-color: rgba(71, 71, 71, 0.095);
 }
 
 .sessionbar .navigations-container .navigations ul li:hover {
-    background-color: rgba(71, 71, 71, 0.095);
-    color: #2E5BFF;
-    border-left: 2px solid #2E5BFF;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+  background-color: rgba(71, 71, 71, 0.095);
+  color: #2e5bff;
+  border-left: 2px solid #2e5bff;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-weight: 600;
 }
 
 .sessionbar .title-container .panel-close:hover {
-    color: #2E5BFF;
+  color: #2e5bff;
 }
 
+.sessionbar .navigations-container .navigations ul span .icon:hover {
+  background-color: rgba(71, 71, 71, 0.095);
+}
+
+
+.sessionbar .navigations-container::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+
+.sessionbar .navigations-container::-webkit-scrollbar-thumb {
+  background: #bcbec7;
+  border-radius: 3px;
+}

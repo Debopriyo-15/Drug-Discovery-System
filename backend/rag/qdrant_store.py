@@ -86,6 +86,8 @@ class QdrantStore:
                         "publication_year": chunk.publication_year,
 
                         "authors": chunk.authors,
+                        "keywords": chunk.keywords,
+                        "mesh_terms": chunk.mesh_terms,
 
                         "url": chunk.url,
 
@@ -169,6 +171,8 @@ class QdrantStore:
                     "doi": payload.get("doi"),
                     "title": payload.get("title"),
                     "authors": payload.get("authors", []),
+                    "keywords": payload.get("keywords", []),
+                    "mesh_terms": payload.get("mesh_terms", []),
                     "journal": payload.get("journal"),
                     "publication_year": payload.get("publication_year"),
                     "url": payload.get("url"),
@@ -191,6 +195,8 @@ class QdrantStore:
                     title=paper["title"],
                     abstract="\n\n".join(paper["texts"]),
                     authors=paper["authors"],
+                    keywords=paper["keywords"],
+                    mesh_terms=paper["mesh_terms"],
                     journal=paper["journal"],
                     publication_year=paper["publication_year"],
                     url=paper["url"]

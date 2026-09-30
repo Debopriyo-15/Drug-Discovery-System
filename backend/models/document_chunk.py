@@ -56,6 +56,16 @@ class DocumentChunk(BaseModel):
         description="Authors of the source paper."
     )
 
+    keywords: list[str] = Field(
+        default_factory=list,
+        description="Author-provided keywords of the source paper."
+    )
+
+    mesh_terms: list[str] = Field(
+        default_factory=list,
+        description="Medical Subject Headings of the source paper."
+    )
+
     chunk_index: int = Field(
         ...,
         ge=0,
