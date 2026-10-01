@@ -1,0 +1,54 @@
+.compound {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.compound .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.compound .title-container .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85%;
+  margin-left: 18px;    
+}
+
+.compound .title-container .title h2 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.compound .title-container .title h3 {
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 0.3rem;
+  color: rgba(71, 71, 71, 0.603);
+}
+
+.compound .title-container .indexed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.2rem;
+  padding: 10px;
+  margin-right: 18px;    
+  height: fit-content;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #047857;
+  border-radius: 25px;
+  background-color: #E0F3EE;
+}
