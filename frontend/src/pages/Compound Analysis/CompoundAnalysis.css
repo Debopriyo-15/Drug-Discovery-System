@@ -1,0 +1,118 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.engine-ready{
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    justify-content: center;
+    gap: 2px;
+    background-color:  #E0F3EE;
+    color: #047857;
+    height: 30px;
+    width: 150px;
+}
+
+.box1 {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+
+}
+.box1 h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+}
+.box1 p {
+    color: #666;
+    margin-bottom: 20px;
+}
+.box1 form {
+    display: flex;
+    gap: 10px;
+
+}
+.input_field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: white;
+}
+.box1 input[type="text"] {
+  
+    
+    background-color: white;
+    width: 70%;
+    border: none;
+    outline: none;
+}
+.box1 button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+    background-color: #007bff;
+    gap:5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 38px;
+    width: 20%;
+    font-weight: bold;
+}
+.box1 button p {
+    color: white;
+}
+.quick_select {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    /*margin-top: 20px;
+   
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px; */
+}
+.quick_select p{
+   transform: translateY(7px);
+}
+.quick_select button {
+    background-color: #c5cac7;
+    width: 100px;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.analyzed_compounds {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+   
+   
+}
+.analyzed_compounds_heading {
+   display: flex;
+   gap: 10px;
+}
+.analyzed_compounds_list {
+    display: flex;
+    gap:10px;
+}
+.analyzed_compounds_list p{
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+   cursor: pointer;
+}
