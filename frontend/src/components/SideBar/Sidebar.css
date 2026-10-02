@@ -70,6 +70,9 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  height: 100%;
+  overflow-y: auto;
+  direction: rtl;
 }
 
 .sidebar .navigations-container .navigations {
@@ -78,9 +81,7 @@
   justify-content: start;
   gap: 1rem;
   width: 220px;
-
-  height: 100%;
-  overflow-y: auto;
+  direction: ltr;
 }
 
 .sidebar .navigations-container .navigations ul {
@@ -162,7 +163,7 @@
 
 .sidebar .navigations-container::-webkit-scrollbar {
   display: block;
-  width: 6px;
+  width: 4px;
 }
 
 .sidebar .navigations-container::-webkit-scrollbar-thumb {

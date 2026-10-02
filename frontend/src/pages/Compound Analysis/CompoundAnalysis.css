@@ -1,118 +1,228 @@
-.head{
-    display: flex;
-    justify-content: space-between;
-   
-}
-.engine-ready{
-    display: flex;
-    padding: 5px;
-    border-radius: 5px;
-    justify-content: center;
-    gap: 2px;
-    background-color:  #E0F3EE;
-    color: #047857;
-    height: 30px;
-    width: 150px;
+.compound-analysis {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 20px;
+  padding: 14px;
 }
 
-.box1 {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px;
+.compound-card {
+  width: 100%;
+  padding: 22px 21px 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
 
+.compound-header,
+.analysis-form,
+.quick-samples,
+.analyzed-compounds-heading,
+.analyzed-compounds-list {
+  display: flex;
+  align-items: center;
 }
-.box1 h2 {
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 10px;
 
+.compound-header {
+  justify-content: space-between;
+  gap: 16px;
 }
-.box1 p {
-    color: #666;
-    margin-bottom: 20px;
-}
-.box1 form {
-    display: flex;
-    gap: 10px;
 
+.compound-header h1 {
+  margin: 0 0 3px;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
 }
-.input_field {
+
+.compound-header p {
+  margin-top: 10px;
+  color: #526b8d;
+  font-size: 13px;
+}
+
+.engine-ready {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 7px;
+  min-width: 132px;
+  height: 26px;
+  padding: 15px;
+  border-radius: 3px;
+  background: #e5f6f1;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.analysis-form {
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.compound-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 40px;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  color: #526b8d;
+  background: #f8fafc;
+}
+
+.compound-input input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #1e293b;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+}
+
+.clear-input {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border: 0;
+  color: #526b8d;
+  background: transparent;
+  cursor: pointer;
+}
+
+.run-analysis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 151px;
+  height: 40px;
+  gap: 9px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  background: #0649db;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.05s ease-in;
+}
+
+.quick-samples {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 17px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.quick-samples-label {
+  margin-right: 3px;
+  color: #526b8d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.sample {
+  padding: 5px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 13px;
+  color: #526b8d;
+  background-color: rgba(71, 71, 71, 0.052);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.analyzed-compounds {
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.analyzed-compounds-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 12px;
+  color: #526b8d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.analyzed-compounds-heading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.analyzed-compounds-heading .count {
+  background-color: rgba(71, 71, 71, 0.095);
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 8px;
+}
+
+.analyzed-compounds-list {
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.queue-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 130px;
+  height: 35px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  color: #5b616b;
+  background-color: rgba(71, 71, 71, 0.052);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.run-analysis:hover {
+  transform: translateX(3px);
+}
+
+.sample:hover {
+  color: #fff;
+  background: #0649db;
+  font-family: inherit;
+}
+
+.queue-item:hover {
+  border-color: #0649db;
+  color: #fff;
+  background: #3159f5;
+  font-weight: 500;
+}
+
+
+@media (max-width: 700px) {
+  .compound-header,
+  .analysis-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .run-analysis {
     width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px solid gray;
-    border-radius: 4px;
-    background-color: white;
-}
-.box1 input[type="text"] {
-  
-    
-    background-color: white;
-    width: 70%;
-    border: none;
-    outline: none;
-}
-.box1 button {
-    display: flex;
-    justify-content: center;
-    padding: 10px 10px;
-    background-color: #007bff;
-    gap:5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    height: 38px;
-    width: 20%;
-    font-weight: bold;
-}
-.box1 button p {
-    color: white;
-}
-.quick_select {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-    /*margin-top: 20px;
-   
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding-bottom: 10px; */
-}
-.quick_select p{
-   transform: translateY(7px);
-}
-.quick_select button {
-    background-color: #c5cac7;
-    width: 100px;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-}
-.analyzed_compounds {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-   
-   
-}
-.analyzed_compounds_heading {
-   display: flex;
-   gap: 10px;
-}
-.analyzed_compounds_list {
-    display: flex;
-    gap:10px;
-}
-.analyzed_compounds_list p{
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-   cursor: pointer;
+  }
 }

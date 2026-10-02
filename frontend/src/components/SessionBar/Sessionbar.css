@@ -146,6 +146,7 @@
 .sessionbar .navigations-container .navigations ul li .compound {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   gap: 0.5rem;
@@ -252,7 +253,7 @@
 
 .sessionbar .navigations-container::-webkit-scrollbar {
   display: block;
-  width: 6px;
+  width: 4px;
 }
 
 .sessionbar .navigations-container::-webkit-scrollbar-thumb {
