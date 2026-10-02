@@ -30,6 +30,7 @@ const App = () => {
               <Route path="/assistant" element={<Assistant/>}/>
               <Route path="/compound-analysis" element={<CompoundAnalysis/>}/>
               <Route path="/similrity-analysis" element={<SimilarityAnalysis/>}/>
+              <Route path="/similarity-analysis" element={<SimilarityAnalysis/>}/>
               <Route path="/literature-retrieval" element={<LiteratureRetrieval/>}/>
               <Route path="/recent-compounds" element={<RecentCompunds/>}/>
               <Route path="/recent-similarity" element={<RecentSimilarity/>}/>

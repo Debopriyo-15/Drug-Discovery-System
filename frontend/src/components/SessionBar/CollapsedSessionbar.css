@@ -4,10 +4,11 @@
 	flex-direction: column;
 
 	border-left: 1px solid rgb(194, 194, 194);
-	border-bottom: 1px solid rgb(194, 194, 194);
+	/* border-bottom: 1px solid rgb(194, 194, 194); */
 	gap: 1rem;
 	width: 55px;
-	height: 100vh;
+	height: auto;
+	align-self: stretch;
 	padding-bottom: 15px;
 }
 

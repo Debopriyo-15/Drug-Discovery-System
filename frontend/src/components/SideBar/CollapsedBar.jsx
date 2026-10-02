@@ -8,9 +8,8 @@ import {
   ClipboardList,
   ListClock,
   PanelLeftOpen,
-  ListChevronsUpDown,
-  ListChevronsDownUp,
 } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 import "./CollapsedBar.css";
 import { useState } from "react";
@@ -44,21 +43,21 @@ const CollapsedBar = ({ panelAction }) => {
       <div className="navigations-container">
         <div className="navigations">
           <ul>
-            <li><LayoutDashboard className="icons"/></li>
-            <li><BotMessageSquare className="icons"/></li>
+            <NavLink to="/" end><LayoutDashboard className="icons"/></NavLink>
+            <NavLink to="/assistant"><BotMessageSquare className="icons"/></NavLink>
           </ul>
 
           <ul>
-            <li><BookOpenText className="icons"/></li>
-            <li><ListClock className="icons"/></li>
+            <NavLink to="/literature-retrieval"><BookOpenText className="icons"/></NavLink>
+            <NavLink to="/recent-literature"><ListClock className="icons"/></NavLink>
           </ul>
 
           <ul>
-            <li><Microscope className="icons"/></li>
-            <li><ListClock className="icons"/></li>
+            <NavLink to="/compound-analysis"><Microscope className="icons"/></NavLink>
+            <NavLink to="/recent-compounds"><ListClock className="icons"/></NavLink>
 
-            <li><ChartNoAxesCombined className="icons"/></li>
-            <li><ListClock className="icons"/></li>
+            <NavLink to="/similarity-analysis"><ChartNoAxesCombined className="icons"/></NavLink>
+            <NavLink to="/recent-similarity"><ListClock className="icons"/></NavLink>
           </ul>
 
           <ul>

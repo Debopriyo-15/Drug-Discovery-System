@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import {
   FlaskConical,
@@ -11,8 +12,6 @@ import {
   ListClock,
   PanelLeftClose,
   ListChevronsUpDown,
-  ListChevronsDownUp,
-  ExternalLink
 } from "lucide-react";
 
 import CollapsedBar from "./CollapsedBar";
@@ -46,14 +45,14 @@ const Sidebar = () => {
               <h4>MAIN CONSOLE</h4>
               <ListChevronsUpDown className="icon" />
             </span>
-            <li>
+            <NavLink to="/" end>
               <LayoutDashboard />
               <p>Dashboard</p>
-            </li>
-            <li>
+            </NavLink>
+            <NavLink to="/assistant">
               <BotMessageSquare />
               <p>AI Assistant</p>
-            </li>
+            </NavLink>
           </ul>
 
           <ul>
@@ -61,14 +60,14 @@ const Sidebar = () => {
               <h4>KNOWLEDGE RETRIEVAL</h4>
               <ListChevronsUpDown className="icon" />
             </span>
-            <li>
+            <NavLink to="/literature-retrieval">
               <BookOpenText />
               <p>Literature Retrieval</p>
-            </li>
-            <li className="recents">
+            </NavLink>
+            <NavLink className="recents" to="/recent-literature">
               <ListClock />
               <p>Recent Retrievals</p>
-            </li>
+            </NavLink>
           </ul>
 
           <ul>
@@ -76,23 +75,23 @@ const Sidebar = () => {
               <h4>COMPOUND DISCOVERY</h4>
               <ListChevronsUpDown className="icon" />
             </span>
-            <li>
+            <NavLink to="/compound-analysis">
               <Microscope />
               <p>Compound Analysis</p>
-            </li>
-            <li className="recents">
+            </NavLink>
+            <NavLink className="recents" to="/recent-compounds">
               <ListClock />
               <p>Recent Analysis</p>
-            </li>
+            </NavLink>
 
-            <li>
+            <NavLink to="/similarity-analysis">
               <ChartNoAxesCombined />
               <p>Similarity Analysis</p>
-            </li>
-            <li className="recents">
+            </NavLink>
+            <NavLink className="recents" to="/recent-similarity">
               <ListClock />
               <p>Recent Analysis</p>
-            </li>
+            </NavLink>
           </ul>
 
           <ul>
