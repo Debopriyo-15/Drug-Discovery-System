@@ -146,7 +146,7 @@ Tools:
 - literature_conversation: query is the user's biomedical literature question.
 - view_indexed_papers: query must be an empty string.
 - delete_indexed_papers: query must be exactly "y"; use "y" as query when user asks to delete papers.
-- molecule_analysis: query is the compound name or compound text to analyze.
+- molecule_analysis: query is ONE compound name to analyze.
 - similar_compound_search: query is the primary compound; arguments must include target_compounds as a list of comparison compounds.
 - fetch_from_conversation_state: query is the retrieval ID to fetch.
 - view_conversation_state: query must be an empty string.

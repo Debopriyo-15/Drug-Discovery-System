@@ -217,13 +217,23 @@ if __name__ == "__main__":
                 print(f"Original Input       : {compound.get('original_text')}")
                 print(f"Canonical Name       : {compound.get('canonical_name')}")
                 print(f"Confidence           : {compound.get('confidence')}")
-                # print(f"Synonyms             : {', '.join(compound.get('synonyms', [])) or 'None'}")
                 print(f"ChEMBL ID            : {compound.get('chembl_id')}")
                 print(f"SMILES               : {compound.get('smiles')}")
                 print(f"InChIKey             : {compound.get('inchikey')}")
-                print(f"Molecular Formula    : {compound.get('molecular_formula')}")              
-                
-                
+                print(f"Molecular Formula    : {compound.get('molecular_formula')}")
+
+                synonyms = compound.get("synonyms", [])
+                print("\nSynonyms (ATC/FDA):")
+                print("-------------------")
+                if synonyms:
+                    for synonym in synonyms:
+                        print(
+                            f"{synonym.get('syn_type')}: {synonym.get('synonyms')}"
+                        )
+                else:
+                    print("None")
+
+
             if "properties" in data:
                 properties = data["properties"]
 

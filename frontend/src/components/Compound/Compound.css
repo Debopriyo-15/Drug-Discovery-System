@@ -22,12 +22,41 @@
   margin-left: 10px;
 }
 
+.compound .title-container .title .synonyms {
+  display: flex;
+  width: 85%;
+}
+
+.compound .title-container .title .synonyms span {
+  display: flex;
+  width: fit-content;
+  gap: 5px;
+  margin-right: 3px;
+} 
+
+.compound .title-container .title .synonyms span .dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  height: fit-content;
+}
+
+.compound .title-container .title .synonyms span p {
+  display: flex;
+  width: 100%;
+}
+
 .compound .title-container .title h2 {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 0.6rem;
   width: 85%;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .compound .title-container .title h3 {
@@ -64,6 +93,38 @@
   color: #047857;
   border-radius: 25px;
   background-color: #e0f3ee;
+}
+
+.compound-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 12px;
+  color: #047857;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.compound-navigation button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 6px;
+  border: 0;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #047857;
+  background: transparent;
+  cursor: pointer;
+}
+
+.compound-navigation button:hover:not(:disabled) {
+  background: rgba(4, 120, 87, 0.12);
+}
+
+.compound-navigation button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
 }
 
 .compound .compound-container {
@@ -103,7 +164,7 @@
   display: flex;
   /* justify-content: center;
   align-items: center; */
-  width: 50%;
+  width: 80%;
 
   border-radius: 4px;
   border: 1px solid #cbd5e1;
@@ -246,6 +307,7 @@
 
 .compound .compound-container .compound-item .lipinski .title h2 {
   font-size: 18px;
+  font-weight: 600;
 }
 
 .compound .compound-container .compound-item .lipinski .details {
@@ -305,12 +367,27 @@
   .details
   .items
   .value
-  p {
+  .pass {
   padding: 4px;
   font-size: 10px;
   border-radius: 3px;
   color: #047857;
   background-color: #e0f3ee;
+}
+
+.compound
+  .compound-container
+  .compound-item
+  .lipinski
+  .details
+  .items
+  .value
+  .fail {
+  padding: 4px 5px;
+  font-size: 10px;
+  border-radius: 3px;
+  color: rgb(255, 68, 0);
+  background-color: rgba(250, 77, 46, 0.138);
 }
 
 .compound .compound-container .compound-item .lipinski .overall {
@@ -332,6 +409,7 @@
 
 .compound .compound-container .compound-item .lipinski .overall .title h4 {
   width: 100%;
+  font-weight: 600;
 }
 
 .compound .compound-container .compound-item .lipinski .overall .title span {

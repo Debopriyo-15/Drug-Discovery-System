@@ -11,6 +11,18 @@ const data = {
             smiles: "CC(=O)Oc1ccccc1C(=O)O",
             inchikey: "BSYNRYMUTXBXSQ-UHFFFAOYSA-N",
             molecular_formula: "C9H8O4",
+            synonyms: [
+              {
+                molecule_synonym: "Acetylsalicylic acid",
+                syn_type: "ATC",
+                synonyms: "ACETYLSALICYLIC ACID",
+              },
+              {
+                molecule_synonym: "Aspirin",
+                syn_type: "FDA",
+                synonyms: "ASPIRIN",
+              },
+            ],
           },
           properties: {
             molecular_weight: 180.15899999999996,
@@ -51,6 +63,18 @@ const data = {
             smiles: "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
             inchikey: "HEFNNWSXXWATRW-UHFFFAOYSA-N",
             molecular_formula: "C13H18O2",
+            synonyms: [
+              {
+                molecule_synonym: "Ibuprofen",
+                syn_type: "ATC",
+                synonyms: "IBUPROFEN",
+              },
+              {
+                molecule_synonym: "Ibuprofen",
+                syn_type: "FDA",
+                synonyms: "IBUPROFEN",
+              },
+            ],
           },
           properties: {
             molecular_weight: 206.28499999999997,
@@ -92,6 +116,13 @@ const data = {
               "CC(C)(O)c1ccccc1CC[C@@H](SCC1(CC(=O)O)CC1)c1cccc(/C=C/c2ccc3ccc(Cl)cc3n2)c1",
             inchikey: "UCHDWCPVSPXUMX-TZIWLTJVSA-N",
             molecular_formula: "C35H36ClNO3S",
+            synonyms: [
+              {
+                molecule_synonym: "Montelukast",
+                syn_type: "ATC",
+                synonyms: "MONTELUKAST",
+              },
+            ],
           },
           properties: {
             molecular_weight: 586.1970000000001,

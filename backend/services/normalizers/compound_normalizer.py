@@ -6,6 +6,8 @@ from services.sources.chembl_service import chembl_service
 
 class CompoundNormalizer:
 
+    SUPPORTED_SYNONYM_TYPES = {"ATC", "FDA"}
+
     @staticmethod
     def _normalize_name(name: str) -> str:
         """
@@ -76,6 +78,46 @@ class CompoundNormalizer:
         )
 
         return best_match, 0.5
+
+    @classmethod
+    def _extract_supported_synonyms(
+        cls,
+        molecule: dict
+    ) -> list[dict[str, str]]:
+
+        # Return only ChEMBL synonyms from the supported source types
+
+        synonyms = []
+        seen = set()
+
+        for synonym in molecule.get("molecule_synonyms", []):
+            synonym_type = str(synonym.get("syn_type", "")).upper()
+            molecule_synonym = synonym.get("molecule_synonym")
+            synonyms_value = synonym.get("synonyms")
+
+            if (
+                synonym_type not in cls.SUPPORTED_SYNONYM_TYPES
+                or not molecule_synonym
+                or not synonyms_value
+            ):
+                continue
+
+            key = (
+                synonym_type,
+                molecule_synonym,
+                synonyms_value
+            )
+            if key in seen:
+                continue
+
+            seen.add(key)
+            synonyms.append({
+                "molecule_synonym": molecule_synonym,
+                "syn_type": synonym_type,
+                "synonyms": synonyms_value
+            })
+
+        return synonyms
 
 
     def normalize(
@@ -148,6 +190,10 @@ class CompoundNormalizer:
             "full_molformula"
         )
 
+        synonyms = self._extract_supported_synonyms(
+            molecule
+        )
+
         # 6. Canonical name
         canonical_name = (
             molecule.get("pref_name")
@@ -168,7 +214,8 @@ class CompoundNormalizer:
             chembl_id=chembl_id,
             smiles=smiles,
             inchikey=inchikey,
-            molecular_formula=formula
+            molecular_formula=formula,
+            synonyms=synonyms
         )
 
 

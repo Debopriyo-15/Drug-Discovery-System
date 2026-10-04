@@ -37,7 +37,12 @@ class GraphResolver:
         graph_compound = self.graph_entity_properties(graph_data["c"])
         compound = CompoundEntity(**{
             **normalized_compound.model_dump(),
-            **graph_compound
+            **graph_compound,
+            "synonyms": [
+                self.graph_entity_properties(synonym)
+                for synonym in graph_data.get("synonyms", [])
+                if synonym
+            ]
         })
         lipinski = LipinskiResult(
             molecular_weight_pass=graph_compound[
@@ -104,6 +109,11 @@ class GraphResolver:
 
     def add_compound(self, analysis):
         self.dependencies.graph_service.add_compound(analysis)
+
+    def add_compound_synonyms(self, compound):
+        self.dependencies.graph_service.add_compound_synonyms(
+            compound
+        )
 
 
     def add_protein_interaction(self, compound, protein, target):

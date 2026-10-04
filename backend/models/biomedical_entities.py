@@ -52,6 +52,11 @@ class CompoundEntity(BaseBioMedicalEntity):
         default=None,
         description="Molecular formula of the compound."
     )
+
+    synonyms: list[dict[str, str]] = Field(
+        default_factory=list,
+        description="ATC and FDA synonyms of the compound."
+    )
     
     
     

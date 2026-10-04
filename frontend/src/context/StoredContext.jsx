@@ -4,7 +4,8 @@ import { createContext, useEffect, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-  const url = "http://localhost:8000";
+  // const url = "http://localhost:8000";
+  const url = "https://www.ebi.ac.uk/chembl/api/data/"
 
   const [token, setToken] = useState("");
 

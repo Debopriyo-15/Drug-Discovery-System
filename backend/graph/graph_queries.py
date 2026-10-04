@@ -76,6 +76,24 @@ SET
 """
 
 
+ADD_COMPOUND_SYNONYMS = """
+MATCH (c:Compound {
+    chembl_id: $chembl_id
+})
+
+UNWIND $synonyms AS synonym
+
+MERGE (s:Synonym {
+    syn_type: synonym.syn_type,
+    value: synonym.synonyms
+})
+
+SET s.molecule_synonym = synonym.molecule_synonym
+
+MERGE (c)-[:HAS_SYNONYM]->(s)
+"""
+
+
 ADD_PROTEIN = """
 MERGE (p:Protein {
     uniprot_id: $uniprot_id
@@ -313,8 +331,10 @@ MATCH (c:Compound {
 OPTIONAL MATCH (c)-[protein_relationship]->(p:Protein)
 OPTIONAL MATCH (c)-[disease_relationship]->(d:Disease)
 OPTIONAL MATCH (c)-[side_effect_relationship]->(s:SideEffect)
+OPTIONAL MATCH (c)-[:HAS_SYNONYM]->(synonym:Synonym)
 
 RETURN c,
+    collect(DISTINCT synonym) AS synonyms,
     collect(DISTINCT {
         protein: p,
         target_chembl_id: protein_relationship[$target_chembl_property],
@@ -345,8 +365,10 @@ WHERE toLower(c[$canonical_property]) = toLower($compound_name)
 OPTIONAL MATCH (c)-[protein_relationship]->(p:Protein)
 OPTIONAL MATCH (c)-[disease_relationship]->(d:Disease)
 OPTIONAL MATCH (c)-[side_effect_relationship]->(s:SideEffect)
+OPTIONAL MATCH (c)-[:HAS_SYNONYM]->(synonym:Synonym)
 
 RETURN c,
+    collect(DISTINCT synonym) AS synonyms,
     collect(DISTINCT {
         protein: p,
         target_chembl_id: protein_relationship[$target_chembl_property],

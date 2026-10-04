@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   FlaskConical,
   Play,
@@ -11,16 +12,19 @@ import Compound from "../../components/Compound/Compound";
 
 import "./CompoundAnalysis.css";
 
+import data from "../../assets/data";
+
 const CompoundAnalysis = () => {
+  const compounds = data.state.analyzed_compounds;
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <main className="compound-analysis">
       <section className="compound-card">
         <div className="compound-header">
           <div>
             <h1>Compound Ingestion &amp; Cheminformatics Analysis</h1>
-            <p>
-              Enter compound name (e.g., Aspirin, Ibuprofen, Paracetamol)
-            </p>
+            <p>Enter compound name (e.g., Aspirin, Ibuprofen, Paracetamol)</p>
           </div>
           <div className="engine-ready">
             <Microscope size={17} />
@@ -66,9 +70,7 @@ const CompoundAnalysis = () => {
             <span>
               <SquareMenu size={16} /> Compound Queue (To be analyzed)
             </span>
-            <span className="count">
-              5 in workspace
-            </span>
+            <span className="count">5 in workspace</span>
           </div>
           <div className="analyzed-compounds-list">
             <button type="button" className="queue-item">
@@ -88,7 +90,22 @@ const CompoundAnalysis = () => {
         </div>
       </section>
 
-      <Compound />
+      {compounds.length > 0 && (
+        <Compound
+          compound_details={compounds[activeIndex].compound_details}
+          onPrevious={() => setActiveIndex((index) => Math.max(index - 1, 0))}
+          onNext={() =>
+            setActiveIndex((index) =>
+              Math.min(index + 1, compounds.length - 1)
+            )
+          }
+          hasPrevious={activeIndex > 0}
+          hasNext={activeIndex < compounds.length - 1}
+          currentIndex={activeIndex}
+          totalCompounds={compounds.length}
+          key={compounds[activeIndex].compound_details.compound.chembl_id}
+        />
+      )}
     </main>
   );
 };

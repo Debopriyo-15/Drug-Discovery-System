@@ -109,6 +109,21 @@ class GraphService:
             params
         )
 
+    def add_compound_synonyms(
+        self,
+        compound: CompoundEntity
+    ):
+        if not compound.synonyms:
+            return
+
+        self.client.execute_query(
+            graph_queries.ADD_COMPOUND_SYNONYMS,
+            {
+                "chembl_id": compound.chembl_id,
+                "synonyms": compound.synonyms
+            }
+        )
+
 
     # ========================================================
     # Protein
