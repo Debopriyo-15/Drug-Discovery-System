@@ -162,8 +162,8 @@
 
 .compound .compound-container .compound-item .compound-details .image {
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
   width: 80%;
 
   border-radius: 4px;
@@ -336,7 +336,7 @@
 .compound .compound-container .compound-item .lipinski .details .items h4 {
   width: 100%;
   /* padding: 5px; */
-  padding: 11px 10px;
+  padding: 10px 10px;
   color: rgba(71, 71, 71, 0.603);
 }
 
@@ -394,7 +394,7 @@
   display: flex;
   justify-content: start;
   gap: 5px;
-  padding: 13px 12px;
+  padding: 12px 12px;
   border-radius: 4px;
   background-color: rgba(71, 71, 71, 0.097);
 }

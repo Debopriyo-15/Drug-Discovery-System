@@ -1,0 +1,172 @@
+.recent-compounds {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 14px;
+}
+
+.recent-compounds-card {
+  width: 100%;
+  padding: 22px 21px 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+.recent-compounds-heading,
+.recent-compounds-actions,
+.recent-compounds-toolbar,
+.recent-compounds-route,
+.recent-compounds-search,
+.recent-compounds-sort {
+  display: flex;
+  align-items: center;
+}
+
+.recent-compounds-heading {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.recent-compounds-route {
+  gap: 10px;
+  margin-bottom: 5px;
+  color: #526b8d;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.recent-compounds-route strong {
+  color: #0649db;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.recent-compounds h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.recent-compounds p {
+  max-width: 710px;
+  margin: 10px 0 0;
+  color: #526b8d;
+  font-size: 13px;
+}
+
+.recent-compounds-actions {
+  gap: 14px;
+}
+
+.recent-compounds button,
+.recent-compounds select {
+  font: inherit;
+}
+
+.recent-compounds button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: rgba(138, 138, 138, 0.052);
+  color: #0f172a;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.05s ease-in;
+}
+
+.recent-compounds .export-button:hover {
+  background: rgba(57, 57, 57, 0.052);
+}
+
+.recent-compounds .screen-button {
+  min-width: 151px;
+  border-color: #0649db;
+  background: #0649db;
+  color: #fff;
+  font-weight: 600;
+}
+
+.recent-compounds-toolbar {
+  gap: 12px;
+  margin-top: 17px;
+  padding-top: 17px;
+  border-top: 1px solid #cbd5e1;
+}
+
+.recent-compounds-search {
+  flex: 1;
+  height: 40px;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #f8fafc;
+  color: #526b8d;
+}
+
+.recent-compounds-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.recent-compounds-sort {
+  gap: 12px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  color: #526b8d;
+  background: rgba(71, 71, 71, 0.052);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.recent-compounds-sort select {
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  outline: none;
+  background: #fff;
+  color: #3d506b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.recent-compounds .screen-button:hover {
+  transform: translateX(3px);
+}
+
+@media (max-width: 700px) {
+  .recent-compounds-heading,
+  .recent-compounds-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .recent-compounds-actions {
+    justify-content: flex-start;
+  }
+
+  .recent-compounds-sort {
+    align-self: flex-start;
+  }
+}

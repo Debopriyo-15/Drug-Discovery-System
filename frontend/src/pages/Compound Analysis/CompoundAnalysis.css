@@ -16,6 +16,27 @@
   color: #0f172a;
 }
 
+.compound-card .route {
+  margin-bottom: 5px;
+}
+
+.compound-card .route {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  color: #526b8d;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.compound-card .route strong {
+  color: #0649db;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .compound-header,
 .analysis-form,
 .quick-samples,
@@ -31,7 +52,7 @@
 }
 
 .compound-header h1 {
-  margin: 0 0 3px;
+  margin: 0;
   font-size: 25px;
   font-weight: 600;
   line-height: 1.25;

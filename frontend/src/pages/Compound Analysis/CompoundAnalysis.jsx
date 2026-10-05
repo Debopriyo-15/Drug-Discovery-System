@@ -23,6 +23,11 @@ const CompoundAnalysis = () => {
       <section className="compound-card">
         <div className="compound-header">
           <div>
+            <div className="route">
+              <span>COMPOUND DISCOVERY</span>
+              <span>/</span>
+              <strong>COMPOUND ANALYSIS</strong>
+            </div>
             <h1>Compound Ingestion &amp; Cheminformatics Analysis</h1>
             <p>Enter compound name (e.g., Aspirin, Ibuprofen, Paracetamol)</p>
           </div>
@@ -95,9 +100,7 @@ const CompoundAnalysis = () => {
           compound_details={compounds[activeIndex].compound_details}
           onPrevious={() => setActiveIndex((index) => Math.max(index - 1, 0))}
           onNext={() =>
-            setActiveIndex((index) =>
-              Math.min(index + 1, compounds.length - 1)
-            )
+            setActiveIndex((index) => Math.min(index + 1, compounds.length - 1))
           }
           hasPrevious={activeIndex > 0}
           hasNext={activeIndex < compounds.length - 1}
