@@ -139,19 +139,256 @@
 
 .recent-compounds-sort select {
   height: 30px;
-  padding: 0 10px;
+  padding: 0 2px;
   border: 1px solid #cbd5e1;
   border-radius: 3px;
   outline: none;
   background: #fff;
   color: #3d506b;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
 }
 
 .recent-compounds .screen-button:hover {
   transform: translateX(3px);
+}
+
+/* Registry table */
+.recent-compounds-card:last-child {
+  overflow: hidden;
+  padding: 0;
+}
+
+.compounds-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 0 20px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.compounds-title,
+.compounds-legend,
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.compounds-title {
+  gap: 10px;
+}
+
+.compounds-heading h4 {
+  color: #182238;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.compounds-title > span {
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #71809a;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.compounds-legend {
+  gap: 18px;
+  color: #65738c;
+  font-size: 10px;
+}
+
+.legend-item {
+  gap: 5px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.legend-dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.compliant-dot {
+  background: #0b9f7a;
+}
+
+.flagged-dot {
+  background: #d25d23;
+}
+
+.grid-headings,
+.list-item {
+  display: grid;
+  grid-template-columns:
+    72px
+    minmax(220px, 1.8fr)
+    125px
+    120px
+    85px
+    60px
+    60px
+    60px;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.grid-headings {
+  min-height: 40px;
+  padding: 0 20px;
+  border-bottom: 1px solid #edf1f5;
+  background: #fcfcfd;
+}
+
+.grid-headings p {
+  margin: 0;
+  color: #526b8d;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.45px;
+  white-space: nowrap;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 78px;
+  padding: 0 20px;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.list > .item:nth-child(4),
+.list > .item:nth-child(5),
+.list > .item:nth-child(6) {
+  white-space: nowrap;
+}
+
+.list:last-child {
+  border-bottom: 0;
+}
+
+.list .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 33px;
+  border-radius: 4px;
+  background: #eef1f4;
+}
+
+.list .img img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.list .item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  color: #15213a;
+}
+
+.list .item h5,
+.list .item h3 {
+  margin: 0;
+}
+
+.list .item h5 {
+  color: #0759d8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.list .item h3 {
+  color: #272727;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.list .item:nth-child(2) h5 {
+  color: #172238;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.list .item:nth-child(2) h3 {
+  color: #60718f;
+  font-size: 12px;
+}
+
+.list .item:nth-child(3) h5 {
+  color: #0759d8;
+}
+
+.list .item:nth-child(3) h3 {
+  color: #60718f;
+  font-size: 11px;
+}
+
+.list .item span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 14px;
+  background: #e7f7f2;
+  color: #008d6e;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.list .item .view {
+  background: none;
+  color: #1e2b43;
+  cursor: pointer;
+}
+
+.list .item span p {
+  display: block;
+  margin: 0;
+  color: #00a47d;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.list > .item:nth-child(7) {
+  align-items: center;
+}
+
+.list .item:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  color: #35506f;
+}
+
+/* .recent-compounds-card:last-child::after {
+  content: "Showing 1 to 6 of 148 compounds";
+  display: block;
+  padding: 11px 20px;
+  border-top: 1px solid #edf1f5;
+  color: #61718d;
+  font-size: 11px;
+} */
+
+.list .item .view:hover {
+  background-color: rgba(71, 71, 71, 0.095);
 }
 
 @media (max-width: 700px) {
@@ -168,5 +405,37 @@
 
   .recent-compounds-sort {
     align-self: flex-start;
+  }
+
+  .recent-compounds-card:last-child {
+    overflow: hidden;
+  }
+
+  .grid-headings,
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    row-gap: 12px;
+  }
+
+  .grid-headings {
+    min-height: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .list {
+    min-height: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .grid-headings p {
+    white-space: normal;
+  }
+
+  .list > .item:nth-child(4),
+  .list > .item:nth-child(5),
+  .list > .item:nth-child(6) {
+    white-space: normal;
   }
 }
