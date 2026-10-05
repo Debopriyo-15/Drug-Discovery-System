@@ -1,0 +1,302 @@
+.literature-analysis {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 20px;
+  padding: 14px;
+}
+
+.literature-card {
+  width: 100%;
+  padding: 22px 21px 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+.literature-card .route {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #526b8d;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.literature-card .route strong {
+  color: #0649db;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.literature-card .compound-header,
+.literature-card .analysis-form,
+.literature-card .quick-samples,
+.literature-card .analyzed-compounds-heading,
+.literature-card .analyzed-compounds-list {
+  display: flex;
+  align-items: center;
+}
+
+.literature-card .compound-header {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.literature-card .compound-header h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.literature-card .compound-header p {
+  margin-top: 10px;
+  color: #526b8d;
+  font-size: 13px;
+}
+
+.literature-card .engine-ready {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 7px;
+  min-width: 132px;
+  height: 26px;
+  padding: 15px;
+  border-radius: 3px;
+  background: #e5f6f1;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.literature-card .analysis-form {
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.literature-card .compound-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 40px;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  color: #526b8d;
+  background: #f8fafc;
+}
+
+.literature-card .compound-input input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #1e293b;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+}
+
+.literature-card .clear-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: 0;
+  color: #526b8d;
+  background: transparent;
+  cursor: pointer;
+}
+
+.literature-card .run-analysis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 151px;
+  height: 40px;
+  gap: 9px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  background: #0649db;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.05s ease-in;
+}
+
+.literature-card .quick-samples {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 17px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.literature-card .quick-samples-label {
+  margin-right: 3px;
+  color: #526b8d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.literature-card .sample {
+  padding: 5px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 13px;
+  color: #526b8d;
+  background-color: rgba(71, 71, 71, 0.052);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.literature-card .analyzed-compounds {
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.literature-card .analyzed-compounds-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 12px;
+  color: #526b8d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.literature-card .analyzed-compounds-heading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.literature-card .analyzed-compounds-heading .count {
+  background-color: rgba(71, 71, 71, 0.095);
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 8px;
+}
+
+.literature-card .analyzed-compounds-list {
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.literature-card .queue-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 130px;
+  height: 35px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  color: #5b616b;
+  background-color: rgba(71, 71, 71, 0.052);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.literature-card .run-analysis:hover {
+  transform: translateX(3px);
+}
+
+.literature-card .sample:hover,
+.literature-card .queue-item:hover {
+  color: #fff;
+  background: #0649db;
+}
+
+.literature-card .max-papers-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 120px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #f8fafc;
+  color: #526b8d;
+}
+
+.literature-card .max-papers-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.literature-card .meta-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #66768d;
+}
+
+.literature-card .meta-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.literature-card .literature-presets {
+  margin-bottom: 8px;
+}
+
+.literature-card .literature-status-pill {
+  min-width: 180px;
+}
+
+.literature-card .literature-vector-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #52657d;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.literature-card .vector-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.literature-card .vector-separator {
+  color: #93a0b2;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .literature-card .compound-header,
+  .literature-card .analysis-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .literature-card .run-analysis {
+    width: 100%;
+  }
+}
