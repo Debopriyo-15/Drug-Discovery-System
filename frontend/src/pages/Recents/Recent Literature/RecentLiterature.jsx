@@ -1,4 +1,4 @@
-import { Check, Circle, Database, RefreshCw, Search } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 
 import "./RecentLiterature.css";
 
@@ -6,8 +6,6 @@ const RecentLiterature = () => {
   return (
     <main className="recent-literature">
       <section className="recent-literature-card">
-
-
         <div className="literature-content">
           <div className="literature-heading">
             <div>
@@ -18,17 +16,16 @@ const RecentLiterature = () => {
               </div>
               <h1>Literature &amp; Grounding Evidence</h1>
               <p>
-                Peer-reviewed research and validated molecular evidence supporting
-                active drug discovery targets.
+                Peer-reviewed research and validated molecular evidence
+                supporting active drug discovery targets.
               </p>
             </div>
 
             <div className="literature-actions">
-              <span className="literature-connection-status">
-                <i />
-                Europe PMC Connected
-              </span>
-
+              <button type="button" className="literature-new-button">
+                <Plus size={18} />
+                Fetch New Literature
+              </button>
             </div>
           </div>
 
@@ -42,19 +39,15 @@ const RecentLiterature = () => {
               />
             </label>
 
-            <div className="literature-filters" aria-label="Literature filters">
-              <button type="button" className="literature-filter active" aria-pressed="true">
-                All Articles (164)
-              </button>
-              <button type="button" className="literature-filter" aria-pressed="false">
-                <Check size={13} />
-                Grounded Only
-              </button>
-              <button type="button" className="literature-filter" aria-pressed="false">
-                <Circle size={12} />
-                Recent (Past 7 Days)
-              </button>
-            </div>
+            <label className="literature-sort">
+              <span>SORT :</span>
+              <select defaultValue="recent">
+                <option value="recent">Recently Added</option>
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="citations">Citation Count</option>
+              </select>
+            </label>
           </div>
         </div>
       </section>

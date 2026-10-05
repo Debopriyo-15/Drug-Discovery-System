@@ -53,7 +53,7 @@ const RecentCompunds = () => {
           </label>
 
           <label className="recent-compounds-sort">
-            <span>SORT:</span>
+            <span>SORT :</span>
             <select defaultValue="recent">
               <option value="recent">Recently Added</option>
               <option value="name">Name</option>

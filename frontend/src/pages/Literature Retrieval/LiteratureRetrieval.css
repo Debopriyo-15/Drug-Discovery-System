@@ -164,55 +164,45 @@
 }
 
 .literature-card .analyzed-compounds {
-  margin-top: 12px;
+  margin-top: 10px;
   overflow: hidden;
 }
 
-.literature-card .analyzed-compounds-heading {
+.literature-card .literature-pipeline-row {
   display: flex;
-  justify-content: space-between;
-  gap: 6px;
-  margin-bottom: 12px;
-  color: #526b8d;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  min-height: 45px;
+  padding: 0 12px;
+  border-radius: 4px;
+  color: #172238;
+  background: #f1f3f5;
+  font-size: 12px;
 }
 
-.literature-card .analyzed-compounds-heading span {
+.literature-card .pipeline-label,
+.literature-card .pipeline-metric {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  white-space: nowrap;
 }
 
-.literature-card .analyzed-compounds-heading .count {
-  background-color: rgba(71, 71, 71, 0.095);
-  border-radius: 4px;
+.literature-card .pipeline-label {
+  color: #2a4d83;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+}
+
+.literature-card .pipeline-metric {
   font-weight: 500;
-  padding: 8px;
+  color: #526b8d;
 }
 
-.literature-card .analyzed-compounds-list {
-  gap: 8px;
-  overflow-x: auto;
-}
-
-.literature-card .queue-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2rem;
-  min-width: 130px;
-  height: 35px;
-  padding: 0 13px;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-  color: #5b616b;
-  background-color: rgba(71, 71, 71, 0.052);
-  font-size: 12px;
-  cursor: pointer;
-  transition: color 0.1s ease, background-color 0.1s ease;
+.literature-card .pipeline-label svg,
+.literature-card .pipeline-metric svg {
+  color: #0759d8;
 }
 
 .literature-card .run-analysis:hover {
@@ -247,16 +237,22 @@
 }
 
 .literature-card .meta-label {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #66768d;
 }
 
 .literature-card .meta-value {
-  font-size: 14px;
-  font-weight: 600;
+  width: 80px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #aebbd0;
+  border-radius: 3px;
+  outline: none;
   color: #1f2937;
+  line-height: 1.6;
 }
 
 .literature-card .literature-presets {
@@ -281,12 +277,49 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .literature-card .vector-separator {
   color: #93a0b2;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.literature-card .k-value {
+  gap: 4px;
+  color: #52657d;
+  font-weight: 500;
+}
+
+.literature-card .k-value input {
+  width: 34px;
+  height: 22px;
+  padding: 2px 5px;
+  border: 1px solid #aebbd0;
+  border-radius: 3px;
+  outline: 0;
+  color: #172238;
+  background: #fff;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  transition: border-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.literature-card .k-value input:hover {
+  border-color: #7892ba;
+}
+
+.literature-card .k-value input::-webkit-inner-spin-button,
+.literature-card .k-value input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.literature-card .k-value input[type='number'] {
+  appearance: textfield;
 }
 
 @media (max-width: 700px) {

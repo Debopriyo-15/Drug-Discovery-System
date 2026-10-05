@@ -1,6 +1,8 @@
-import React from 'react';
 import {
-  BookOpenText,
+  Brackets,
+  CheckSquare,
+  Circle,
+  Filter,
   Search,
   X,
   ListOrdered,
@@ -8,10 +10,14 @@ import {
   Microscope,
   Sparkles,
   Brain,
+  ScrollText,
+  BookOpenText,
+  Cpu,
   MessageSquareText,
   Link2,
   SendHorizontal,
 } from 'lucide-react';
+import { useState } from 'react';
 import './LiteratureRetrieval.css';
 
 const queryPresets = [
@@ -20,13 +26,6 @@ const queryPresets = [
   'EGFR T790M Resistance',
   'KRAS G12D Scaffolds',
   'Ibuprofen vs Acetaminophen',
-];
-
-const pipelineChecks = [
-  '24 Papers Retrieved',
-  '18 Newly Indexed',
-  '6 Duplicates Filtered',
-  '412 Chunks Added',
 ];
 
 const LiteratureRetrieval = () => {
@@ -42,14 +41,13 @@ const LiteratureRetrieval = () => {
             </div>
             <h1>Literature Acquisition &amp; Semantic RAG Engine</h1>
             <p>
-              Retrieve peer-reviewed literature, compute semantic chunk embeddings,
-              and inspect citation-grounded evidence. Connected to Europe PMC,
-              PubMed &amp; Qdrant Vector Store (38.4M papers indexed).
+              Retrieve literature, compute semantic chunk embeddings,
+              and inspect citation-grounded evidence. Connected to Europe PMC.
             </p>
           </div>
 
           <div className="engine-ready">
-            <Microscope size={17} />
+            <ScrollText size={17} />
             <span>Engine Ready</span>
           </div>
         </div>
@@ -59,8 +57,7 @@ const LiteratureRetrieval = () => {
             <Search size={18} />
             <input
               type="text"
-              value="Aspirin platelet aggregation and COX-1 inhibition"
-              readOnly
+              placeholder="Aspirin platelet aggregation and COX-1 inhibition"
             />
             <button type="button" className="clear-input">
               <X size={17} />
@@ -71,7 +68,11 @@ const LiteratureRetrieval = () => {
             <ListOrdered size={16} />
             <div className="max-papers-meta">
               <span className="meta-label">MAX PAPERS</span>
-              <span className="meta-value">25</span>
+              <input className="meta-value" 
+                type="number"
+                min="1"
+                placeholder="100"
+              />
             </div>
           </div>
 
@@ -91,31 +92,40 @@ const LiteratureRetrieval = () => {
         </div>
 
         <div className="analyzed-compounds literature-pipeline">
-          <div className="analyzed-compounds-heading">
-            <span>
-              <Brain size={16} /> Pipeline
+          <div className="literature-pipeline-row">
+            <span className="pipeline-label">
+              <Circle size={8} fill="currentColor" /> PIPELINE:
             </span>
-           
-          </div>
-
-          <div className="analyzed-compounds-list literature-checks">
-            {pipelineChecks.map((check) => (
-              <button key={check} type="button" className="queue-item literature-status-pill">
-                
-                {check}
-              </button>
-            ))}
+            <span className="pipeline-metric">
+              <BookOpenText size={14} /> 24 Papers Retrieved                
+            </span>
+            <span className="pipeline-metric">
+              <CheckSquare size={14} /> 18 Newly Indexed
+            </span>
+            <span className="pipeline-metric">
+              <Filter size={14} /> 6 Duplicates Filtered
+            </span>
+            <span className="pipeline-metric pipeline-chunks">
+              <Brackets size={14} /> 412 Chunks Added
+            </span>
           </div>
         </div>
 
         <div className="vector-row literature-vector-row">
           <span className="vector-item">
-            <BookOpenText size={14} /> Qdrant HNSW-Dense
+            <Cpu size={13} style={{color: "0649db"}}/> Qdrant HNSW-Dense
           </span>
           <span className="vector-separator">•</span>
-          <span className="vector-item">Metric: Cosine</span>
+          <span className="vector-item">Metric : Cosine</span>
           <span className="vector-separator">•</span>
-          <span className="vector-item">k=8</span>
+          <label className="vector-item k-value">
+            Top k papers :
+            <input
+              type="number"
+              min="1"
+              placeholder="5"
+            />
+          </label>
         </div>
       </section>
     </main>
