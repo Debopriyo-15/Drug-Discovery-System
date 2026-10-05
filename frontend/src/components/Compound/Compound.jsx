@@ -17,8 +17,9 @@ const Compound = ({
   const compound = compound_details.compound;
   const properties = compound_details.properties;
 
-  const { url } = useContext(StoreContext);
   const synonyms = compound.synonyms ?? [];
+  
+  const { url } = useContext(StoreContext);
   const imageUrl = `${url}image/${encodeURIComponent(compound.chembl_id)}.svg`;
 
   return (

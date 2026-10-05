@@ -1,6 +1,17 @@
-import { Download, Plus, Search, SquareArrowOutUpRight } from "lucide-react";
+import { useContext } from "react";
+
+import { 
+  Download, 
+  Plus, 
+  Search, 
+  SquareArrowOutUpRight 
+} from "lucide-react";
+
+import { StoreContext } from "../../../context/StoredContext";
 
 import "./RecentCompunds.css";
+
+import data from "../../../assets/data";
 
 const RecentCompunds = () => {
   return (
@@ -56,7 +67,7 @@ const RecentCompunds = () => {
         <div className="compounds-heading">
           <div className="compounds-title">
             <h4>All Registry Entries</h4>
-            <span>6 of 148</span>
+            <span>3 of 120</span>
           </div>
           <div className="compounds-legend">
             <span className="legend-item">
@@ -82,39 +93,60 @@ const RecentCompunds = () => {
         </div>
 
         <div className="list">
-          <div className="list-item">
-            <div className="img">
-              <img src="" alt="" />
-            </div>
-            <div className="item">
-              <h5>Aspirin</h5>
-              <h3>Acetylsalicylic Acid</h3>
-            </div>
-            <div className="item">
-              <h5>CHEMBL25</h5>
-            </div>
-            <div className="item">
-              <h3>C9H8O4</h3>
-            </div>
-            <div className="item">
-              <h3>180.16 Da</h3>
-            </div>
-            <div className="item">
-              <h3>1.19</h3>
-            </div>
-            <div className="item">
-              <span>
-                <i className="legend-dot compliant-dot" />
-                <p>Pass</p>
-              </span>
-            </div>
-            <div className="item">
-              <span className="view">
-                <h3>View</h3>
-                <SquareArrowOutUpRight size={11} />
-              </span>
-            </div>
-          </div>
+          {data.state.analyzed_compounds.map((c) => {
+            const compound = c.compound_details.compound;
+            const properties = c.compound_details.properties;
+            const synonyms = compound.synonyms ?? [];
+
+            const { url } = useContext(StoreContext);
+            const imageUrl = `${url}image/${encodeURIComponent(compound.chembl_id)}.svg`;
+            
+            return (
+              <div className="list-item" key={compound.chembl_id}>
+                <div className="img">
+                  <img src={imageUrl} alt="" />
+                </div>
+                <div className="item">
+                  <h5>{compound.canonical_name}</h5>
+                  {synonyms.map((s, index) => {
+                    return (
+                      <h3 key={s.syn_type}>
+                        <p style={{ width: "fit-content" }}>{s.syn_type}: </p>
+                        <p>{s.molecule_synonym}</p>
+                        {index !== synonyms.length - 1 && (
+                          <p className="dot">.</p>
+                        )}
+                      </h3>
+                    );
+                  })}
+                </div>
+                <div className="item">
+                  <h5>{compound.chembl_id}</h5>
+                </div>
+                <div className="item">
+                  <h3>{compound.molecular_formula}</h3>
+                </div>
+                <div className="item">
+                  <h3>{properties.molecular_weight.toFixed(2)} Da</h3>
+                </div>
+                <div className="item">
+                  <h3>{properties.logp.toFixed(2)}</h3>
+                </div>
+                <div className="item">
+                  <span>
+                    <i className="legend-dot compliant-dot" />
+                    <p>Pass</p>
+                  </span>
+                </div>
+                <div className="item">
+                  <span className="view">
+                    <h3>View</h3>
+                    <SquareArrowOutUpRight size={11} />
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </main>
