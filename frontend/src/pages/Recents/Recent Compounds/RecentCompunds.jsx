@@ -1,11 +1,6 @@
 import { useContext } from "react";
 
-import { 
-  Download, 
-  Plus, 
-  Search, 
-  SquareArrowOutUpRight 
-} from "lucide-react";
+import { Download, Plus, Search, SquareArrowOutUpRight } from "lucide-react";
 
 import { StoreContext } from "../../../context/StoredContext";
 
@@ -70,11 +65,11 @@ const RecentCompunds = () => {
             <span>3 of 120</span>
           </div>
           <div className="compounds-legend">
-            <span className="legend-item">
+            <span className="legend-item compliant">
               <i className="legend-dot compliant-dot" />
               Lipinski Compliant
             </span>
-            <span className="legend-item">
+            <span className="legend-item flagged">
               <i className="legend-dot flagged-dot" />
               Lipinski Flagged
             </span>
@@ -100,7 +95,7 @@ const RecentCompunds = () => {
 
             const { url } = useContext(StoreContext);
             const imageUrl = `${url}image/${encodeURIComponent(compound.chembl_id)}.svg`;
-            
+
             return (
               <div className="list-item" key={compound.chembl_id}>
                 <div className="img">
@@ -133,10 +128,17 @@ const RecentCompunds = () => {
                   <h3>{properties.logp.toFixed(2)}</h3>
                 </div>
                 <div className="item">
-                  <span>
-                    <i className="legend-dot compliant-dot" />
-                    <p>Pass</p>
-                  </span>
+                  {properties.lipinski.overall_pass ? (
+                    <span className="pass"> 
+                      <i className="legend-dot compliant-dot" />
+                      <p>Pass</p>
+                    </span>
+                  ) : (
+                    <span className="fail">
+                      <i className="legend-dot flagged-dot" />
+                      <p>Fail</p>
+                    </span>
+                  )}
                 </div>
                 <div className="item">
                   <span className="view">

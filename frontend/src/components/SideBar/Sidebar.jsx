@@ -57,7 +57,7 @@ const Sidebar = () => {
 
           <ul>
             <span>
-              <h4>KNOWLEDGE RETRIEVAL</h4>
+              <h4>KNOWLEDGE DISCOVERY</h4>
               <ListChevronsUpDown className="icon" />
             </span>
             <NavLink to="/literature-retrieval">

@@ -35,9 +35,9 @@ const LiteratureRetrieval = () => {
         <div className="compound-header">
           <div>
             <div className="route">
-              <span>LITERATURE DISCOVERY</span>
+              <span>KNOWLEDGE DISCOVERY</span>
               <span>/</span>
-              <strong>RETRIEVAL</strong>
+              <strong>LITERATURE RETRIEVAL</strong>
             </div>
             <h1>Literature Acquisition &amp; Semantic RAG Engine</h1>
             <p>

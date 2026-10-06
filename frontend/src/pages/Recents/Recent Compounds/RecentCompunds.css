@@ -110,7 +110,7 @@
   padding: 0 12px;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
-  background: #f8fafc;
+  background-color: rgba(71, 71, 71, 0.052);
   color: #526b8d;
 }
 
@@ -126,7 +126,7 @@
 .recent-compounds-sort {
   gap: 5px;
   height: 40px;
-  padding: 0 12px;  
+  padding: 0 12px;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
   color: #526b8d;
@@ -205,7 +205,19 @@
   gap: 5px;
   white-space: nowrap;
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.compliant {
+  background: #e7f7f2;
+  color: #008d6e;
+}
+
+.flagged {
+  background-color: rgba(250, 77, 46, 0.138);
+  color: #d25d23;
 }
 
 .legend-dot {
@@ -379,11 +391,27 @@
   gap: 6px;
   padding: 5px 10px;
   border-radius: 14px;
-  background: #e7f7f2;
-  color: #008d6e;
   font-size: 10px;
   font-weight: 600;
 }
+
+.list .item .pass {
+  background: #e7f7f2;
+}
+
+.list .item .pass p {
+  color: #008d6e;
+}
+
+.list .item .fail {
+  padding: 5px 11px;
+  background-color: rgba(250, 77, 46, 0.138);
+}
+
+.list .item .fail p {
+  color: #d25d23;
+}
+
 
 .list .item .view {
   background: none;
@@ -397,7 +425,6 @@
 .list .item span p {
   display: block;
   margin: 0;
-  color: #00a47d;
   font-size: 12px;
   font-weight: 500;
   line-height: 1;

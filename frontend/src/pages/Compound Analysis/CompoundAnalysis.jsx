@@ -52,7 +52,7 @@ const CompoundAnalysis = () => {
         </form>
 
         <div className="quick-samples">
-          <span className="quick-samples-label">Quick Samples:</span>
+          <span className="quick-samples-label">Quick Samples :</span>
           <button type="button" className="sample">
             Aspirin
           </button>
@@ -73,9 +73,9 @@ const CompoundAnalysis = () => {
         <div className="analyzed-compounds">
           <div className="analyzed-compounds-heading">
             <span>
-              <SquareMenu size={16} /> Compound Queue (To be analyzed)
+              <SquareMenu size={16} /> Compound Queue (To be analyzed) :
             </span>
-            <span className="count">5 in workspace</span>
+            <span className="count">3 in workspace</span>
           </div>
           <div className="analyzed-compounds-list">
             <button type="button" className="queue-item">
@@ -87,9 +87,9 @@ const CompoundAnalysis = () => {
             <button type="button" className="queue-item">
               Paracetamol
             </button>
-            <button type="button" className="queue-item">
-              <CirclePlus size={16} />
-              Add compound
+            <button type="button" className="queue-item add">
+              <CirclePlus size={14} />
+              ADD COMPOUND
             </button>
           </div>
         </div>

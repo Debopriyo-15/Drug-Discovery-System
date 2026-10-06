@@ -1,0 +1,33 @@
+.run-similarity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  gap: 9px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  background: #0649db;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.05s ease-in;
+}
+
+.run-similarity:hover {
+  transform: translateX(3px);
+}
+
+@media (max-width: 700px) {
+  .compound-header,
+  .analysis-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .run-similarity {
+    width: 100%;
+  }
+}   

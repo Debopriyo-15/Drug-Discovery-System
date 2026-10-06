@@ -172,6 +172,7 @@
   border: 1px solid #cbd5e1;
   border-radius: 4px;
   color: #526b8d;
+  background-color: rgba(71, 71, 71, 0.052);
 }
 
 .literature-search input {
@@ -182,7 +183,7 @@
   background: transparent;
   color: #0f172a;
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .literature-search input::placeholder {

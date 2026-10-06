@@ -10,11 +10,11 @@ const RecentLiterature = () => {
           <div className="literature-heading">
             <div>
               <div className="literature-route">
-                <span>LITERATURE</span>
+                <span>KNOWLEDGE DISCOVERY</span>
                 <span>/</span>
-                <strong>INGESTED EVIDENCE CORPUS</strong>
+                <strong>RECENT RETRIEVALS</strong>
               </div>
-              <h1>Literature &amp; Grounding Evidence</h1>
+              <h1>Recent Literature Registry</h1>
               <p>
                 Peer-reviewed research and validated molecular evidence
                 supporting active drug discovery targets.
@@ -31,7 +31,7 @@ const RecentLiterature = () => {
 
           <div className="literature-toolbar">
             <label className="literature-search">
-              <Search size={16} aria-hidden="true" />
+              <Search size={18} aria-hidden="true" />
               <input
                 type="search"
                 placeholder="Search papers by title, author, DOI, or target..."
