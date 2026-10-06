@@ -66,6 +66,27 @@ class DocumentChunk(BaseModel):
         description="Medical Subject Headings of the source paper."
     )
 
+    source: str = Field(
+        default="Europe PMC",
+        description="Source database from which the paper was retrieved."
+    )
+
+    open_access: bool = Field(
+        default=False,
+        description="Indicates whether the full-text paper is available as open access."
+    )
+
+    in_pmc: bool = Field(
+        default=False,
+        description="Indicates whether the paper is available in PubMed Central."
+    )
+
+    cited_by_count: int = Field(
+        default=0,
+        ge=0,
+        description="Number of times the paper has been cited according to Europe PMC."
+    )
+
     chunk_index: int = Field(
         ...,
         ge=0,

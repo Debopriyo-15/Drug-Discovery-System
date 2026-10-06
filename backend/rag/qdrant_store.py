@@ -88,7 +88,10 @@ class QdrantStore:
                         "authors": chunk.authors,
                         "keywords": chunk.keywords,
                         "mesh_terms": chunk.mesh_terms,
-
+                        "source": chunk.source,
+                        "open_access": chunk.open_access,
+                        "in_pmc": chunk.in_pmc,
+                        "cited_by_count": chunk.cited_by_count,
                         "url": chunk.url,
 
                         "chunk_index": chunk.chunk_index,
@@ -175,17 +178,38 @@ class QdrantStore:
                     "mesh_terms": payload.get("mesh_terms", []),
                     "journal": payload.get("journal"),
                     "publication_year": payload.get("publication_year"),
+                    "source": payload.get("source"),
+                    "open_access": payload.get("open_access"),
+                    "in_pmc": payload.get("in_pmc"),
+                    "cited_by_count": payload.get("cited_by_count"),
                     "url": payload.get("url"),
-                    "texts": []
+                    "chunks": []
                 }
                 
-            papers[paper_id]["texts"].append(
-                payload.get("text", "")
+            papers[paper_id]["chunks"].append(
+                (
+                    payload.get("chunk_index"),
+                    payload.get("text", "")
+                )
             )
             
         results = []
         
         for paper in papers.values():
+            abstract = "\n\n".join(
+                text
+                for _, text in sorted(
+                    paper["chunks"],
+                    key=lambda chunk: (
+                        chunk[0] is None,
+                        chunk[0] if chunk[0] is not None else 0
+                    )
+                )
+            )
+
+            title = paper["title"]
+            if title and abstract.startswith(title):
+                abstract = abstract[len(title):].lstrip()
             
             results.append(
                 PaperEntity(
@@ -193,12 +217,16 @@ class QdrantStore:
                     pmcid=paper["pmcid"],
                     doi=paper["doi"],
                     title=paper["title"],
-                    abstract="\n\n".join(paper["texts"]),
+                    abstract=abstract,
                     authors=paper["authors"],
                     keywords=paper["keywords"],
                     mesh_terms=paper["mesh_terms"],
                     journal=paper["journal"],
                     publication_year=paper["publication_year"],
+                    source=paper["source"],
+                    open_access=paper["open_access"],
+                    in_pmc=paper["in_pmc"],
+                    cited_by_count=paper["cited_by_count"],
                     url=paper["url"]
                 )
             )                

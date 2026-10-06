@@ -29,6 +29,16 @@ class ReferencedPaper(BaseModel):
         description="Title of the referenced paper."
     )
 
+    authors: list[str] = Field(
+        default_factory=list,
+        description="Authors of the referenced paper."
+    )
+
+    keywords: list[str] = Field(
+        default_factory=list,
+        description="Author-provided keywords associated with the paper."
+    )
+
     journal: Optional[str] = Field(
         default=None,
         description="Journal where the paper was published."

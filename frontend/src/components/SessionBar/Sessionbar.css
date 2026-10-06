@@ -7,8 +7,13 @@
   /* border-bottom: 1px solid rgb(194, 194, 194); */
   gap: 1rem;
   width: 250px;
-  height: auto;
-  align-self: stretch;
+  height: 100vh;
+  min-height: 0;
+  max-height: 100vh;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
   padding-bottom: 15px;
 }
 
@@ -71,26 +76,48 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  height: 100%;
-  overflow-y: auto;
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .sessionbar .navigations-container .navigations {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  gap: 1rem;
+  flex: 1;
+  min-height: 0;
   width: 220px;
+}
+
+.sessionbar .navigations-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 0.5px;
+  background-color: rgb(194, 194, 194);
+  pointer-events: none;
 }
 
 .sessionbar .navigations-container .navigations ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
   gap: 0.3rem;
 }
 
+.sessionbar .navigations-container .navigations .papers {
+  margin-top: 10px;
+}
+
 .sessionbar .navigations-container .navigations ul span {
+  flex: 0 0 auto;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -99,6 +126,19 @@
 
   color: rgba(86, 86, 86, 0.916);
   font-weight: 600;
+}
+
+.sessionbar .navigations-container .navigations ul .session-items {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #bcbec7 transparent;
+  padding-right: 8px;
+  gap: 0.3rem;
+  overflow-x: hidden;
 }
 
 .sessionbar .navigations-container .navigations ul span h4 {
@@ -131,6 +171,7 @@
   transition:
     color 0.1s ease,
     background-color 0.1s ease;
+  width: 200px;
 }
 
 .sessionbar .navigations-container .navigations ul li .summary {
@@ -252,12 +293,7 @@
   background-color: rgba(71, 71, 71, 0.095);
 }
 
-.sessionbar .navigations-container::-webkit-scrollbar {
-  display: block;
-  width: 4px;
-}
 
-.sessionbar .navigations-container::-webkit-scrollbar-thumb {
-  background: #bcbec7;
-  border-radius: 3px;
+.sessionbar .navigations-container .navigations ul + ul {
+  padding-top: 1rem;
 }

@@ -63,6 +63,10 @@ class TextChunker:
                 authors=paper.authors,
                 keywords=paper.keywords,
                 mesh_terms=paper.mesh_terms,
+                source=paper.source,
+                open_access=paper.open_access,
+                in_pmc=paper.in_pmc,
+                cited_by_count=paper.cited_by_count,
 
                 chunk_index=chunk_index,
                 text=chunk_text

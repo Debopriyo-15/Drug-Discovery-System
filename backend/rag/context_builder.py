@@ -64,6 +64,7 @@ class ContextBuilder:
                         doi=chunk.doi,
                         title=chunk.title or "Unknown",
                         authors=chunk.authors,
+                        keywords=chunk.keywords,
                         journal=chunk.journal,
                         publication_year=chunk.publication_year,
                         url=chunk.url
